@@ -1,5 +1,7 @@
 from django.db import models
 
+from JF_Academic.models import Program
+
 
 class User(models.Model):
 
@@ -15,4 +17,5 @@ class Teacher(User):
 
 
 class Student(User):
-    pass
+
+    program = models.ForeignKey(Program, on_delete=models.PROTECT)
