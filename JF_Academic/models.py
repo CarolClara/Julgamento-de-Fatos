@@ -1,38 +1,40 @@
 from django.db import models
 
+from JF_Judgment_Facts.models import JudgmentFacts
 from JF_Login.models import Student
 
 
-class Class(models.Model):
+class Group(models.Model):
 
     id = models.AutoField(primary_key=True)
-    name = models.CharField()
+    name = models.CharField(max_length=60)
     student = models.ManyToManyField(Student)
+    judgment_facts = models.ManyToManyField(JudgmentFacts)
 
 
-class ClassStudent(models.Model):
+class GroupStudent(models.Model):
 
     id = models.AutoField(primary_key=True)
-    class_id = models.ForeignKey(Class.id, on_delete=models.PROTECT)
-    student_id = models.ForeignKey(Student.id, on_delete=models.PROTECT)
+    group = models.ForeignKey(Group, on_delete=models.PROTECT)
+    student = models.ForeignKey(Student, on_delete=models.PROTECT)
 
 
 class Course(models.Model):
 
     id = models.AutoField(primary_key=True)
-    name = models.CharField()
-    course = models.ManyToManyField(Class)
+    name = models.CharField(max_length=60)
+    group = models.ManyToManyField(Group)
 
 
 class Program(models.Model):
 
     id = models.AutoField(primary_key=True)
-    name = models.CharField()
+    name = models.CharField(max_length=60)
     course = models.ManyToManyField(Course)
 
 
 class Unit(models.Model):
 
     id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=30, unique=True)
+    name = models.CharField(max_length=60, unique=True)
     program = models.ManyToManyField(Program)

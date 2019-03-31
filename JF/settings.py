@@ -16,6 +16,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'JF_Academic',
+    'JF_Judgment_Facts',
+    'JF_Login',
 ]
 
 MIDDLEWARE = [
@@ -56,6 +59,9 @@ DATABASES = {
         'USER': 'u347988228_user',
         'PASSWORD': 'Conexao123$',
         'HOST': 'sql170.main-hosting.eu.',
+        'OPTIONS': {
+            'sql_mode': 'traditional',
+        }
     }
 }
 
