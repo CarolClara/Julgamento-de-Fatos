@@ -4,15 +4,13 @@ from django.core.validators import MaxValueValidator
 from model_utils.fields import StatusField
 from model_utils import Choices
 
-from JF_Login.models import Student
-
 
 class Team(models.Model):
 
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=30)
-    leader = models.ForeignKey(Student, on_delete=models.PROTECT, unique=True)
-    member = models.ManyToManyField(Student, unique=True)
+    leader = models.ForeignKey('JF_Login.models.Student', on_delete=models.PROTECT, unique=True)
+    member = models.ManyToManyField('JF_Login.models.Student', unique=True)
 
 
 class Fact(models.Model):
@@ -34,7 +32,14 @@ class TeamFact(models.Model):
 
 class JudgmentFacts(models.Model):
 
-    STATUS = Choices('CREATION', 'PREPARATION', 'EXECUTION', 'FINALIZED')
+    CREATION = 1
+    PREPARATION = 2
+    EXECUTION = 3
+    FINALIZED = 4
+
+    STATUS = Choices(
+        (CREATION, (u'Em criação')), (PREPARATION, (u'Em preparação')), (EXECUTION, (u'Em execução')), (FINALIZED, (u'Finalizado'))
+    )
 
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=30)
