@@ -12,7 +12,7 @@ class Team(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=30)
     leader = models.ForeignKey(Student, on_delete=models.PROTECT, unique=True)
-    member = models.ManyToManyField(Student)
+    member = models.ManyToManyField(Student, unique=True)
 
 
 class Fact(models.Model):
@@ -22,6 +22,14 @@ class Fact(models.Model):
     statement = models.CharField()
     topic_course = models.CharField()
     correct_answer = models.BooleanField()
+
+
+class TeamFact(models.Model):
+
+    id = models.AutoField(primary_key=True)
+    team_id = models.ForeignKey(Team.id, on_delete=models.PROTECT)
+    fact_id = models.ForeignKey(Fact.id, on_delete=models.PROTECT)
+    team_answer = models.BooleanField()
 
 
 class JudgmentFacts(models.Model):
