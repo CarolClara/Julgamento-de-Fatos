@@ -10,6 +10,13 @@ class Class(models.Model):
     student = models.ManyToManyField(Student)
 
 
+class ClassStudent(models.Model):
+
+    id = models.AutoField(primary_key=True)
+    class_id = models.ForeignKey(Class.id, on_delete=models.PROTECT)
+    student_id = models.ForeignKey(Student.id, on_delete=models.PROTECT)
+
+
 class Course(models.Model):
 
     id = models.AutoField(primary_key=True)
