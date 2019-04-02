@@ -1,4 +1,5 @@
 import os
+import pydoc
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -53,13 +54,15 @@ WSGI_APPLICATION = 'JF.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'u347988228_jf',
-        'USER': 'u347988228_user',
+        'ENGINE': 'sql_server.pyodbc',
+        'NAME': 'db_judgment_facts',
+        'HOST': 'iffact.database.windows.net',
+        'PORT': 1433,
+        'USER': 'admin_iffact@iffact',
         'PASSWORD': 'Conexao123$',
-        'HOST': 'sql170.main-hosting.eu.',
         'OPTIONS': {
-            'sql_mode': 'traditional',
+            'host_is_server': True,
+            'driver': 'SQL Server Native Client 11.0'
         }
     }
 }
