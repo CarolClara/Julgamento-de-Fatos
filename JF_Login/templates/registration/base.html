@@ -1,22 +1,22 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html>
-<head>
-  <title>if(FACT)</title>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <!--     Fonts and icons     -->
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-  <!-- Material Kit CSS -->
-  <link href="{% static "assets/css/material-dashboard.css"%}" rel="stylesheet" />
-</head>
+<html lang="en">
+    <head>
+      <title>if(FACT)</title>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+      <!--     Fonts and icons     -->
+      <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+      <link href="{% static "assets/css/login_page_styles.css"%}" rel="stylesheet" />
+      <link href="{% static "assets/css/material-dashboard.css"%}" rel="stylesheet" />
+    </head>
     <body>
     <div class="wrapper ">
-        <div class="content">
+        <div id="middle_position" class="content">
             <div class="container-fluid">
               <main>
                 {% block content %}
@@ -25,7 +25,26 @@
             </div>
         </div>
         <footer class="footer">
-        </footer>
+        <div class="container-fluid">
+          <nav class="float-left">
+            <ul>
+              <li>
+                <a href="">
+                  if(FACT)
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="copyright float-right">
+            &copy;
+            <script>
+              document.write(new Date().getFullYear())
+            </script>, made with <i class="material-icons">favorite</i> by
+            <a href="" target="_blank">if(FACT)</a>
+          </div>
+          <!-- your footer here -->
+        </div>
+      </footer>
     </div>
     </body>
 </html>

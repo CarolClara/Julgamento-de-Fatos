@@ -53,18 +53,31 @@ TEMPLATES = [
 WSGI_APPLICATION = 'JF.wsgi.application'
 
 DATABASES = {
+    #           HOSTINGER DATABASE          #
     'default': {
-        'ENGINE': 'sql_server.pyodbc',
-        'NAME': 'db_judgment_facts',
-        'HOST': 'iffact.database.windows.net',
-        'PORT': 1433,
-        'USER': 'admin_iffact@iffact',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'u347988228_jf',
+        'USER': 'u347988228_user',
         'PASSWORD': 'Conexao123$',
+        'HOST': 'sql170.main-hosting.eu.',
         'OPTIONS': {
-            'host_is_server': True,
-            'driver': 'SQL Server Native Client 11.0'
+            'sql_mode': 'traditional',
         }
     }
+
+    #           AZURE DATABASE              #
+    # 'default': {
+    #     'ENGINE': 'sql_server.pyodbc',
+    #     'NAME': 'db_judgment_facts',
+    #     'HOST': 'iffact.database.windows.net',
+    #     'PORT': 1433,
+    #     'USER': 'admin_iffact@iffact',
+    #     'PASSWORD': 'Conexao123$',
+    #     'OPTIONS': {
+    #         'host_is_server': True,
+    #         'driver': 'SQL Server Native Client 11.0'
+    #     }
+    #}
 }
 
 AUTH_PASSWORD_VALIDATORS = [
