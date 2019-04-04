@@ -10,10 +10,14 @@ class User(models.Model):
     email = models.EmailField(unique=True)
 
 
-class Teacher(User):
-    pass
+class Teacher(models.Model):
+
+    id = models.AutoField(primary_key=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
 
 
-class Student(User):
+class Student(models.Model):
 
+    id = models.AutoField(primary_key=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     program = models.ForeignKey('JF_Academic.Program', on_delete=models.PROTECT)

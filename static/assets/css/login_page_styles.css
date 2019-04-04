@@ -1,0 +1,22 @@
+
+
+
+.footer {
+    position:absolute;
+    bottom:15px;
+    width:100%;
+}
+
+#login_page_principal {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+}
+
+#middle_position {
+    margin-top: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 45%;
+}

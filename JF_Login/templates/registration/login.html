@@ -1,13 +1,21 @@
-<!-- templates/registration/login.html -->
+﻿﻿ <!-- templates/registration/login.html -->
 {% extends 'registration/base.html' %}
 
 {% block title %}Login{% endblock %}
-
 {% block content %}
-<h2>Login</h2>
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Login</button>
-</form>
+    <div id="login_page_principal">
+        <h2>Fazer Login</h2>
+        <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit">ENTRAR</button>
+        </form>
+            <!-- Unnamed (Rectangle) -->
+    </div>
+    <div id="login_page_singup">
+              <p><h2>Olá, bem vindo!</h2>
+              <p><span>Entre com seus dados pessoais e inicie sua jornada conosco</span></p>
+              <button type="submit">CADASTRAR</button>
+          </div>
 {% endblock %}
+

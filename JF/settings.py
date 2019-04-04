@@ -1,4 +1,5 @@
 import os
+import pydoc
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -52,6 +53,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'JF.wsgi.application'
 
 DATABASES = {
+    #           HOSTINGER DATABASE          #
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'u347988228_jf',
@@ -62,6 +64,20 @@ DATABASES = {
             'sql_mode': 'traditional',
         }
     }
+
+    #           AZURE DATABASE              #
+    # 'default': {
+    #     'ENGINE': 'sql_server.pyodbc',
+    #     'NAME': 'db_judgment_facts',
+    #     'HOST': 'iffact.database.windows.net',
+    #     'PORT': 1433,
+    #     'USER': 'admin_iffact@iffact',
+    #     'PASSWORD': 'Conexao123$',
+    #     'OPTIONS': {
+    #         'host_is_server': True,
+    #         'driver': 'SQL Server Native Client 11.0'
+    #     }
+    #}
 }
 
 AUTH_PASSWORD_VALIDATORS = [
