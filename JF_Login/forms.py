@@ -6,7 +6,12 @@ from .models import *
 
 class LoginForm(forms.Form):
     loginform = forms.CharField(label='Username', max_length=100)
-    passoword = forms.CharField(label='Senha', max_length=32)
+    password = forms.CharField(label='Senha', max_length=32)
+
+    widgets = {
+        'loginform': forms.TextInput(attrs={'placeholder': 'Nome'}),
+        'password': forms.TextInput(attrs={'placeholder': 'Senha'})
+    }
 
 
 class UserForm(forms.ModelForm):

@@ -33,14 +33,14 @@
     background: transparent;
     background-color: #76BAC9;
     color: white;
-    border: white;
+    border-color:  #76BAC9;
     padding: 10px 40px;
     border-radius: 40px;
     text-align: center;
     text-decoration: none;
     margin-top: 20px;
     margin-left: 55px;
-    border-style: double;
+    border-style: solid;
 }
 
 #base {
