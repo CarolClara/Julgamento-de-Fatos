@@ -1,21 +1,60 @@
-﻿﻿ <!-- templates/registration/login.html -->
+﻿ <!-- templates/registration/login.html -->
 {% extends 'registration/base.html' %}
+﻿{% load static %}
+<link href="{% static "assets/css/login_page_styles.css"%}" rel="stylesheet" />
 
 {% block title %}Login{% endblock %}
 {% block content %}
-    <div id="login_page_principal">
-        <h2>Fazer Login</h2>
-        <form method="post">
-          {% csrf_token %}
-          {{ form.as_p }}
-          <button type="submit">ENTRAR</button>
-        </form>
+    <div id="base" class="">
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u0" class="ax_default box_1">
+        <img id="u0_img" class="img " src="{% static "assets/img/u0.png" %}"/>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u1" class="ax_default box_1">
+        <img id="u1_img" class="img " src="{% static "assets/img/u1.png" %}"/>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u2" class="ax_default box_2">
+        <img id="u2_img" class="img " src="{% static "assets/img/u2.png" %}"/>
+      </div>
+
+      <div id="login_page_login">
+            <h2 id="fazer_login">Fazer Login</h2>
+            <form method="post">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <button id="login_page_login_button" type="submit">ENTRAR</button>
+            </form>
             <!-- Unnamed (Rectangle) -->
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u9" class="ax_default paragraph">
+        <div id="u9_div" class=""></div>
+        <div id="u9_text" class="text ">
+          <p><span>Olá, bem vindo!</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u10" class="ax_default paragraph">
+        <div id="u10_div" class=""></div>
+        <div id="u10_text" class="text ">
+          <p><span>Entre com seus dados pessoais e <br> inicie sua jornada conosco</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Rectangle) -->
+      <div id="u11" class="ax_default primary_button">
+        <div id="u11_div" class=""></div>
+        <div id="u11_text" class="text ">
+          <button id="u11_button" type="submit">CADASTRAR</button>
+        </div>
+      </div>
     </div>
-    <div id="login_page_singup">
-              <p><h2>Olá, bem vindo!</h2>
-              <p><span>Entre com seus dados pessoais e inicie sua jornada conosco</span></p>
-              <button type="submit">CADASTRAR</button>
-          </div>
 {% endblock %}
 
