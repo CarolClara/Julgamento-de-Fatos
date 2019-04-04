@@ -31,14 +31,16 @@
 
 #login_page_login_button {
     background: transparent;
-    background-color: transparent;
-    color: #76BAC9;
-    border-color: #76BAC9;
-    padding: 16px;
+    background-color: #76BAC9;
+    color: white;
+    border: white;
+    padding: 10px 40px;
     border-radius: 40px;
     text-align: center;
     text-decoration: none;
-    margin-left: 63px;
+    margin-top: 20px;
+    margin-left: 55px;
+    border-style: double;
 }
 
 #base {
@@ -101,9 +103,13 @@
     background-color: transparent;
     color: white;
     border-color: white;
-    padding: 16px;
+    padding: 10px 35px;
     border-radius: 40px;
     text-align: center;
-    text-decoration: none;
+    margin-left: -26px;
+    border-style: solid;
+}
+
+#login_page_login > form > p:nth-child(2) > label > input {
 
 }
