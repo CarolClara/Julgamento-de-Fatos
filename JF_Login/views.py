@@ -18,10 +18,11 @@ def signup_teacher(request):
         form = TeacherForm(request.POST)
 
         if form.is_valid():
-            return redirect('')
+            form.save()
+            return redirect(request, 'base.html')
     else:
         form = TeacherForm()
-        return render(request, "registrer_teacher.html", {'form': form})
+        return render(request, "registration/signup_teacher.html", {'form': form})
 
 
 def signup_student(request):
@@ -29,7 +30,8 @@ def signup_student(request):
         form = StudentForm(request.POST)
 
         if form.is_valid():
-            return redirect('')
+            form.save()
+            return redirect(request, 'base.html')
     else:
         form = StudentForm()
-        return render(request, "registrer_teacher.html", {'form': form})
+        return render(request, "registration/signup_student.html", {'form': form})

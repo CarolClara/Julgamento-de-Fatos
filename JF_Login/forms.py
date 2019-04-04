@@ -2,7 +2,9 @@ import re
 
 from django import forms
 
+from JF_Academic.models import Program
 from .models import *
+
 
 class LoginForm(forms.Form):
     loginform = forms.CharField(label='Username', max_length=100)
@@ -18,10 +20,18 @@ class UserForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ['name', 'username', 'password', 'email']
+        fields = ['name', 'email', 'username', 'password']
+
+        widgets = {
+            'name': forms.TextInput(attrs={'placeholder': 'Nome'}),
+            'email': forms.EmailInput(attrs={'placeholder': 'E-mail'}),
+            'username': forms.TextInput(attrs={'placeholder': 'Nome de usuário'}),
+            'password': forms.PasswordInput(attrs={'placeholder': 'Senha'})
+        }
+
 
     def is_valid(self):
-        data = UserForm.cleaned_data
+        data = self.cleaned_data
         username = data['username']
         password = data['password']
 
@@ -54,8 +64,7 @@ class TeacherForm(UserForm):
 
 class StudentForm(UserForm):
 
-    class Meta:
-        fields = ['program']
+    program = forms.ModelChoiceField(queryset=Program.objects.all())
 
     def save(self, commit=True):
         user = UserForm.save(self)

@@ -1,5 +1,4 @@
 import os
-import pydoc
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -61,7 +60,7 @@ DATABASES = {
         'PASSWORD': 'Conexao123$',
         'HOST': 'sql170.main-hosting.eu.',
         'OPTIONS': {
-            'sql_mode': 'traditional',
+            'driver': 'SQL Server Native Client 11.0'
         }
     }
 
