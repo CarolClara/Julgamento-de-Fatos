@@ -5,10 +5,10 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-  Seja Bem-vindo {{ user.username }}!
+  Seja bem-vindo, {{ user.username }}!
   <p><a href="{% url 'logout' %}">Sair</a></p>
 {% else %}
-  <p>You are not logged in</p>
+  <p>Sua sessão expirou... </p>
   <a href="{% url 'login' %}">Entrar</a>
 {% endif %}
 {% endblock %}
