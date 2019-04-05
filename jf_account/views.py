@@ -35,7 +35,11 @@ def signup_student(request):
 
         if form.is_valid():
             form.save()
-            return redirect(request, 'base.html')
+            return render(request, "registration/home.html")
     else:
         form = StudentForm()
         return render(request, "registration/signup_student.html", {'form': form})
+
+
+def signup_type(request):
+    return render(request, "registration/signup_type.html")

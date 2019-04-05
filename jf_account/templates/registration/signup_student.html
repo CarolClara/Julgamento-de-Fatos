@@ -25,7 +25,10 @@
     <label id="id-signup-teacher" class="information">Olá, aluno!<br>Crie sua conta</label>
     <label id="id-signin-user" class="information">Bem vindo de volta!</label>
     <label id="id-signin-information" class="information">Já possui um cadastro?<br>Se conecte ao seu perfil</label>
-    <button id="id-btn-signin" class="btn-registrer">Entrar</button>
+    <button id="id-btn-signin" class="btn-registrer" onclick="location.href='{% url 'login' %}'">Entrar</button>
+
+    <i id="id-back" class="fas fa-arrow-left" onclick="location.href='{% url 'signup_type' %}'"></i>
+
     <div class="form_fields_login">
         <form method="post">
         {% csrf_token %}
