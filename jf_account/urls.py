@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import include, path
-from JF_Login import views
+from jf_account import views
 
 urlpatterns = [
     path('accounts/login', views.login_page, name='login'),

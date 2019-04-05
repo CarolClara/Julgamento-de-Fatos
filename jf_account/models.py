@@ -20,4 +20,4 @@ class Student(models.Model):
 
     id = models.AutoField(primary_key=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    program = models.ForeignKey('JF_Academic.Program', on_delete=models.PROTECT)
+    program = models.ForeignKey('jf_academic.Program', on_delete=models.PROTECT)
