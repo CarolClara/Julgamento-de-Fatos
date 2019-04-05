@@ -8,22 +8,13 @@ from .forms import LoginForm
 
 
 def login_page(request):
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        user = authenticate(username=username, password=password)
+    form = LoginForm(request.POST or None)
+    if request.POST and form.is_valid():
+        user = form.login(request)
         if user:
-            if user.is_active:
-                login(request, user)
-                return HttpResponseRedirect(reverse('registration/home.html'))
-            else:
-                return HttpResponse("Your account was inactive.")
-        else:
-            print("Alguém tentou logar e falhou.")
-            print("They used username: {} and password: {}".format(username, password))
-            return HttpResponse("Login invalido")
-    else:
-        return render(request, 'registration/login.html', {})
+            login(request, user)
+            return HttpResponseRedirect("/home.html")
+    return render(request, 'registration/login.html', {'LoginForm': form})
 
 
 def signup_teacher(request):
