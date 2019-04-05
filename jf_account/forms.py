@@ -2,7 +2,7 @@ import re
 
 from django import forms
 
-from JF_Academic.models import Program
+from jf_academic.models import Program
 from .models import *
 
 
