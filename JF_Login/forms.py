@@ -29,7 +29,6 @@ class UserForm(forms.ModelForm):
             'password': forms.PasswordInput(attrs={'placeholder': 'Senha'})
         }
 
-
     def is_valid(self):
         data = self.cleaned_data
         username = data['username']

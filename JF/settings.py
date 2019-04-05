@@ -59,9 +59,9 @@ DATABASES = {
         'USER': 'u347988228_user',
         'PASSWORD': 'Conexao123$',
         'HOST': 'sql170.main-hosting.eu.',
-        'OPTIONS': {
-            'driver': 'SQL Server Native Client 11.0'
-        }
+        #'OPTIONS': {
+        #    'driver': 'SQL Server Native Client 11.0'
+        #}
     }
 
     #           AZURE DATABASE              #
