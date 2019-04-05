@@ -26,7 +26,18 @@
             <h2 id="fazer_login">Fazer Login</h2>
             <form method="post">
               {% csrf_token %}
-              {{ form.as_p }}
+            <div class="control-group">
+                <label class="control-label" for="username"></label>
+                <div class="controls">
+                    <input type="text" class="login_input" id="username" name="username"  placeholder="Usuário">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="password"></label>
+                <div class="controls">
+                    <input type="password" class="login_input" name="password" id="password" placeholder="Senha">
+                </div>
+            </div>
               <button id="login_page_login_button" type="submit">ENTRAR</button>
             </form>
             <!-- Unnamed (Rectangle) -->
@@ -52,7 +63,7 @@
       <div id="u11" class="ax_default primary_button">
         <div id="u11_div" class=""></div>
         <div id="u11_text" class="text ">
-          <button id="u11_button" type="submit">CADASTRAR</button>
+          <button id="u11_button" type="submit" onclick="location.href='{% url 'login' %}'">CADASTRAR</button>
         </div>
       </div>
     </div>

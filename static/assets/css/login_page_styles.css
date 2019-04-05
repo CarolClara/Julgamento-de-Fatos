@@ -110,6 +110,16 @@
     border-style: solid;
 }
 
-#login_page_login > form > p:nth-child(2) > label > input {
+.login_input{
+    margin-bottom: 10px;
+    inline-size: 240px;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+}
 
+
+
+#username {
+    margin-top: 10px;
 }

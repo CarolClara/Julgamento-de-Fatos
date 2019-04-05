@@ -1,5 +1,4 @@
 import os
-import pydoc
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -60,9 +59,9 @@ DATABASES = {
         'USER': 'u347988228_user',
         'PASSWORD': 'Conexao123$',
         'HOST': 'sql170.main-hosting.eu.',
-        'OPTIONS': {
-            'sql_mode': 'traditional',
-        }
+        #'OPTIONS': {
+        #    'driver': 'SQL Server Native Client 11.0'
+        #}
     }
 
     #           AZURE DATABASE              #

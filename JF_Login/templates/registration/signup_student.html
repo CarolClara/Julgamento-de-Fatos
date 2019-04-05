@@ -1,0 +1,61 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>if(FACT)</title>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway" type="text/css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Overpass" type="text/css" rel="stylesheet"/>
+    <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" type="text/css" rel="stylesheet"/>
+    <link href="/static/css/accounts.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="background_1" class="ax_default box_1">
+        <img id="1" class="img " src="{% static 'images/gradient_background.png' %}"/>
+    </div>
+    <div id="background_2" class="ax_default box_1">
+        <img id="2" class="img " src="{% static 'images/withe_background.png' %}"/>
+    </div>
+    <div id="background_3" class="ax_default box_1">
+        <img id="3" class="img " src="{% static 'images/left_rectangle.png' %}"/>
+    </div>
+    <label id="id-signup-teacher" class="information">Olá, aluno!<br>Crie sua conta</label>
+    <label id="id-signin-user" class="information">Bem vindo de volta!</label>
+    <label id="id-signin-information" class="information">Já possui um cadastro?<br>Se conecte ao seu perfil</label>
+    <button id="id-btn-signin" class="btn-registrer">Entrar</button>
+    <div class="form_fields_login">
+        <form method="post">
+        {% csrf_token %}
+        <div id="id_name" class="input-signup">
+            {{ form.name.erros }}
+            {{ form.name }}
+        </div>
+            <br>
+        <div id="id_email" class="input-signup">
+            {{ form.email.erros }}
+            {{ form.email }}
+        </div>
+            <br>
+        <div id="id_username" class="input-signup">
+            {{ form.username.erros }}
+            {{ form.username }}
+        </div>
+            <br>
+        <div id="id_username" class="input-signup">
+            {{ form.password.erros }}
+            {{ form.password }}
+        </div>
+            <br>
+        <div id="id_program" class="input-signup">
+            {{ form.program.erros }}
+            {{ form.program }}
+        </div>
+            <br><br>
+        <button id="id-btn-signup" class="btn-registrer" type="submit">Cadastrar</button>
+        </form>
+    </div>
+</body>
+</html>
