@@ -27,6 +27,7 @@
     padding-left: 124px;
     position: absolute;
     padding-top: 104px;
+    width: 780px;
 }
 
 #login_page_login_button {
@@ -74,7 +75,7 @@
     position: absolute;
     z-index: 6;
     padding-left: 439px;
-    padding-top: 153px;
+    padding-top: 160px;
     color: white;
     font-size: 28px;
     font-weight: 700;
@@ -84,7 +85,7 @@
     position: absolute;
     z-index: 6;
     padding-left: 433px;
-    padding-top: 204px;
+    padding-top: 218px;
     color: white;
     text-align: center;
     font-size: 14px;
@@ -108,6 +109,8 @@
     text-align: center;
     margin-left: -26px;
     border-style: solid;
+    z-index: 15;
+    margin-top: 30px;
 }
 
 .login_input{
@@ -118,7 +121,13 @@
     border-top: none;
 }
 
-
+.form-errors {
+    padding-left: 0;
+    list-style: none;
+    margin-right: 534px;
+    font-size: 13px;
+    color: orangered;
+}
 
 #username {
     margin-top: 10px;
