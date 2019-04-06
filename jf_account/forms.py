@@ -39,10 +39,14 @@ class UserForm(forms.ModelForm):
             'password': forms.PasswordInput(attrs={'placeholder': 'Senha'})
         }
 
+    def save(self, commit=True):
+        data = self.data
+        return User.objects.create(
+            name=data['name'], email=data['email'], username=data['username'], password=data['password'])
+
     def is_valid(self):
-        data = self.cleaned_data
-        username = data['username']
-        password = data['password']
+        username = self.data.get('username')
+        password = self.data.get('password')
 
         return self.username_is_valid(username) and self.password_is_valid(password)
 
@@ -73,10 +77,12 @@ class TeacherForm(UserForm):
 
 class StudentForm(UserForm):
 
-    program = forms.ModelChoiceField(queryset=Program.objects.all())
+    program = forms.ModelChoiceField(queryset=Program.objects.all().values_list('name', flat=True).order_by('name'),
+                                     empty_label='Curso')
 
     def save(self, commit=True):
+        program = Program.objects.get(name=self.data.get('program'))
         user = UserForm.save(self)
-        instance = Student.objects.create(user=user)
+        instance = Student.objects.create(user=user, program=program)
 
         return instance

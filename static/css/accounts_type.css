@@ -1,0 +1,34 @@
+
+#id-signup-type {
+    font-family: Raleway, "Lucida Grande", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-variant: normal;
+    line-height: 30px;
+    position: absolute;
+    text-align: center;
+    font-size: 30px;
+    top: 200px;
+    color: #76BAC9;
+    right: 550px;
+}
+
+#id-type-options {
+    position: absolute;
+    left: 600px;
+    bottom: 300px;
+}
+
+.signup-type {
+    background-color: #FFFAFA;
+    color: #76BAC9;
+    border: 2px solid #76BAC9;
+    border-radius: 15px;
+    width: 150px;
+    height: 40px;
+    font-size: 15px;
+}
+
+#id-back {
+    color: #76BAC9;
+}

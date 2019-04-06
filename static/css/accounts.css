@@ -105,3 +105,10 @@
     height: 35px;
     font-size: 15px;
 }
+
+#id-back {
+    position: absolute;
+    left: 390px;
+    top: 150px;
+    color: #FFFAFA;
+}
