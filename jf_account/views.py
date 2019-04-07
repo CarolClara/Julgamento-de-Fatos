@@ -8,13 +8,22 @@ from .forms import LoginForm
 
 
 def login_page(request):
-    form = LoginForm(request.POST or None)
-    if request.POST and form.is_valid():
-        user = form.login(request)
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+
+        username = request.POST['username']
+        password = request.POST['password']
+
+        user = authenticate(username=username, password=password)
+
         if user:
             login(request, user)
-            return HttpResponseRedirect("/home.html")
-    return render(request, 'registration/login.html', {'LoginForm': form})
+            return render(request, 'registration/home.html')
+        else:
+            return HttpResponse("Dados informados são inválidos")
+    else:
+        form = LoginForm()
+        return render(request, 'registration/login.html', {'form': form})
 
 
 def signup_teacher(request):

@@ -4,9 +4,9 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-{% if user.is_authenticated %}
+{% if user.is_active %}
   Seja bem-vindo, {{ user.username }}!
-  <p><a href="{% url 'logout' %}">Sair</a></p>
+  <p><a href="{% url 'login' %}">Sair</a></p>
 {% else %}
   <p>Sua sessão expirou... </p>
   <a href="{% url 'login' %}">Entrar</a>
