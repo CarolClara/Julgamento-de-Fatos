@@ -19,16 +19,17 @@
         <div id="background_2" class="ax_default box_1">
             <img id="2" class="img " src="{% static 'images/withe_background.png' %}"/>
             <label id="id-signup-type" class="information">Se cadastrar como</label>
+            <i id="id-back" class="fas fa-arrow-left" onclick="location.href='{% url 'login' %}'"></i>
+            <div id="id-type-options">
+                <button id="btn-teacher" class="signup-type"
+                        onclick="location.href='{% url 'signup_teacher' %}'">PROFESSOR</button>
+                <br><br>
+                <button id="btn-student" class="signup-type"
+                        onclick="location.href='{% url 'signup_student' %}'">ALUNO</button>
+            </div>
         </div>
 
-        <i id="id-back" class="fas fa-arrow-left" onclick="location.href='{% url 'login' %}'"></i>
-        <div id="id-type-options">
-            <button id="btn-teacher" class="signup-type"
-                    onclick="location.href='{% url 'signup_teacher' %}'">PROFESSOR</button>
-            <br><br>
-            <button id="btn-student" class="signup-type"
-                    onclick="location.href='{% url 'signup_student' %}'">ALUNO</button>
-        </div>
+
     </div>
 </body>
 </html>
