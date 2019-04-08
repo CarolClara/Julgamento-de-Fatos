@@ -6,17 +6,20 @@
     font-variant: normal;
     line-height: 30px;
     position: absolute;
-    text-align: center;
+    text-align: right;
     font-size: 30px;
-    top: 200px;
+    top: 50px;
+    left: 175px;
     color: #76BAC9;
-    right: 550px;
+
 }
 
-#id-type-options {
+#div_principal {
+    display: block;
     position: absolute;
-    left: 600px;
-    bottom: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 
 .signup-type {
@@ -30,5 +33,23 @@
 }
 
 #id-back {
+    margin-left: 221px;
     color: #76BAC9;
+    margin-top: 18px;
+    position: absolute;
+}
+
+#background_2 {
+    display: block;
+    margin-right: auto;
+    width: 50%;
+    position: absolute;
+    margin-top: 144px;
+    margin-left: 586px;
+}
+
+#id-type-options {
+    margin-top: 296px;
+    position: absolute;
+    margin-left: 816px;
 }
