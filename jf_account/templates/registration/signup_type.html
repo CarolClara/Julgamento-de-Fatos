@@ -15,24 +15,20 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 <body>
-    <div id="background_1" class="ax_default box_1">
-        <img id="1" class="img " src="{% static 'images/gradient_background.png' %}"/>
+    <div id="div_principal">
+        <div id="background_2" class="ax_default box_1">
+            <img id="2" class="img " src="{% static 'images/withe_background.png' %}"/>
+            <label id="id-signup-type" class="information">Se cadastrar como</label>
+        </div>
+
+        <i id="id-back" class="fas fa-arrow-left" onclick="location.href='{% url 'login' %}'"></i>
+        <div id="id-type-options">
+            <button id="btn-teacher" class="signup-type"
+                    onclick="location.href='{% url 'signup_teacher' %}'">PROFESSOR</button>
+            <br><br>
+            <button id="btn-student" class="signup-type"
+                    onclick="location.href='{% url 'signup_student' %}'">ALUNO</button>
+        </div>
     </div>
-    <div id="background_2" class="ax_default box_1">
-        <img id="2" class="img " src="{% static 'images/withe_background.png' %}"/>
-    </div>
-
-    <i id="id-back" class="fas fa-arrow-left" onclick="location.href='{% url 'login' %}'"></i>
-
-    <label id="id-signup-type" class="information">Se cadastrar como</label>
-
-    <div id="id-type-options">
-        <button id="btn-teacher" class="signup-type"
-                onclick="location.href='{% url 'signup_teacher' %}'">PROFESSOR</button>
-        <br><br>
-        <button id="btn-student" class="signup-type"
-                onclick="location.href='{% url 'signup_student' %}'">ALUNO</button>
-    </div>
-
 </body>
 </html>
