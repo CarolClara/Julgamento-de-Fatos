@@ -13,7 +13,7 @@ class LoginForm(forms.ModelForm):
         fields = ['username', 'password']
 
         widgets = {
-            'username': forms.TextInput(attrs={'placeholder': 'Usuário'}),
+            'username': forms.TextInput(attrs={'placeholder': u'Usuário'}),
             'password': forms.PasswordInput(attrs={'placeholder': 'Senha'})
         }
 
@@ -27,7 +27,7 @@ class UserForm(forms.ModelForm):
         widgets = {
             'name': forms.TextInput(attrs={'placeholder': 'Nome'}),
             'email': forms.EmailInput(attrs={'placeholder': 'E-mail'}),
-            'username': forms.TextInput(attrs={'placeholder': 'Nome de usuário'}),
+            'username': forms.TextInput(attrs={'placeholder': u'Nome de usuário'}),
             'password': forms.PasswordInput(attrs={'placeholder': 'Senha'})
         }
 
@@ -53,9 +53,7 @@ class UserForm(forms.ModelForm):
             return True
 
     def username_is_valid(self, username):
-        if len(username) >= 5 and username.isalnum():
-            return True
-        return False
+        return len(username) >= 5 and username.isalnum()
 
 
 class TeacherForm(UserForm):

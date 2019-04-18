@@ -112,3 +112,7 @@ STATICFILES_DIRS = [
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+AUTH_USER_MODEL = "jf_account.User"
+
+# AUTH_USER_MODEL = 'jf_accounts.User'
