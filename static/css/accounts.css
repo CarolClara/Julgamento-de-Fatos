@@ -63,7 +63,6 @@ body {
     font-style: normal;
     font-variant: normal;
     line-height: 30px;
-    position: absolute;
     text-align: center;
     font-size: 30px;
 }
@@ -104,8 +103,6 @@ body {
 }
 
 #id-back {
-    position: absolute;
-    left: 390px;
-    top: 150px;
+    margin: 16px;
     color: #FFFAFA;
 }

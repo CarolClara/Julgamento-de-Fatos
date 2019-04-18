@@ -16,10 +16,15 @@
 </head>
 <body>
     <div id="div_principal">
-        <div id="background_2" class="ax_default box_1">
-            <img id="2" class="img " src="{% static 'images/withe_background.png' %}"/>
-            <label id="id-signup-type" class="information">Se cadastrar como</label>
-            <i id="id-back" class="fas fa-arrow-left" onclick="location.href='{% url 'login' %}'"></i>
+        <div id="background_2" class="form-custom ax_default box_1">
+            <div class="form-top">
+                <div class="form-top-back">
+                    <i id="id-back" class="fas fa-arrow-left" onclick="location.href='{% url 'login' %}'"></i>
+                </div>
+                <div class="form-top-title">
+                    <span id="id-signup-type" class="information">Se cadastrar como</span>
+                </div>
+            </div>
             <div id="id-type-options">
                 <button id="btn-teacher" class="signup-type"
                         onclick="location.href='{% url 'signup_teacher' %}'">PROFESSOR</button>
