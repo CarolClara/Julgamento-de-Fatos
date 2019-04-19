@@ -21,4 +21,4 @@ class Student(models.Model):
 
     id = models.AutoField(primary_key=True)
     user = models.OneToOneField(get_user_model(), on_delete=models.CASCADE)
-    program = models.ForeignKey('jf_academic.Program', on_delete=models.PROTECT)
+    program = models.ForeignKey('academic.Program', on_delete=models.PROTECT)

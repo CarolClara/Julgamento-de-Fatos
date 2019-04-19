@@ -15,9 +15,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'jf_academic',
-    'jf_judgment_facts',
-    'jf_account',
+    'academic',
+    'judgment_facts',
+    'account',
 ]
 
 MIDDLEWARE = [
@@ -53,22 +53,22 @@ WSGI_APPLICATION = 'JF.wsgi.application'
 
 DATABASES = {
     #           HOSTINGER DATABASE          #
-     'default': {
-         'ENGINE': 'django.db.backends.mysql',
-         'NAME': 'u347988228_jf',
-         'USER': 'u347988228_user',
-         'PASSWORD': 'Conexao123$',
-         'HOST': 'sql170.main-hosting.eu.',
-         #'OPTIONS': {
-         #   'driver': 'SQL Server Native Client 11.0'
-         #}
-     }
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'u347988228_jf',
+        'USER': 'u347988228_user',
+        'PASSWORD': 'Conexao123$',
+        'HOST': 'sql170.main-hosting.eu.',
+        # 'OPTIONS': {
+        #     'driver': 'SQL Server Native Client 11.0'
+        # }
+    }
 
     #           AZURE DATABASE              #
-    #'default': {
+    # 'default': {
     #    'ENGINE': 'sql_server.pyodbc',
     #    'NAME': 'db_judgment_facts',
-    #   'HOST': 'iffact.database.windows.net',
+    #    'HOST': 'iffact.database.windows.net',
     #    'PORT': 1433,
     #    'USER': 'admin_iffact@iffact',
     #    'PASSWORD': 'Conexao123$',
@@ -76,7 +76,7 @@ DATABASES = {
     #        'host_is_server': True,
     #        'driver': 'SQL Server Native Client 11.0'
     #    }
-    #}
+    # }
 }
 
 
@@ -113,6 +113,6 @@ STATICFILES_DIRS = [
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
-AUTH_USER_MODEL = "jf_account.User"
+AUTH_USER_MODEL = "account.User"
 
 # AUTH_USER_MODEL = 'jf_accounts.User'

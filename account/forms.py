@@ -3,7 +3,7 @@ import re
 from django import forms
 from django.contrib.auth import authenticate
 
-from jf_academic.models import Program
+from academic.models import Program
 from .models import *
 
 

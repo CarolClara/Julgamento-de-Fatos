@@ -9,8 +9,8 @@ class Team(models.Model):
 
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=60)
-    leader = models.OneToOneField('jf_account.Student', on_delete=models.PROTECT, related_name='student_leader_set')
-    member = models.ManyToManyField('jf_account.Student', related_name='student_member_set')
+    leader = models.OneToOneField('account.Student', on_delete=models.PROTECT, related_name='student_leader_set')
+    member = models.ManyToManyField('account.Student', related_name='student_member_set')
 
 
 class Fact(models.Model):

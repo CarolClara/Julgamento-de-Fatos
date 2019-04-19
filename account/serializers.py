@@ -1,4 +1,4 @@
-from jf_account.models import User
+from account.models import User
 from rest_framework import serializers
 
 

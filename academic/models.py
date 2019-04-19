@@ -1,7 +1,7 @@
 from django.db import models
 
-from jf_judgment_facts.models import JudgmentFacts
-from jf_account.models import Student
+from judgment_facts.models import JudgmentFacts
+from account.models import Student
 
 
 class Group(models.Model):
