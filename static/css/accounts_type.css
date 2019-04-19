@@ -15,9 +15,9 @@ html, body {
 }
 
 #div_principal {
-    top: 43%;
-    left: 43%;
-    width: 40%;
+    top: 30%;
+    left: 38%;
+    width: 35%;
     margin: -100px 0 0 -150px;
     height: 300px;
     position: absolute;
@@ -53,7 +53,7 @@ html, body {
 }
 
 .form-top .form-top-title {
-    float: left;
+    float: inherit;
     width: 90%;
     height: 100%;
 }
