@@ -12,22 +12,8 @@ class Team(models.Model):
     leader = models.OneToOneField('account.Student', on_delete=models.PROTECT, related_name='student_leader_set')
     member = models.ManyToManyField('account.Student', related_name='student_member_set')
 
-
-class Fact(models.Model):
-
-    id = models.AutoField(primary_key=True)
-    order = models.PositiveIntegerField(validators=[MaxValueValidator(99)], unique=True)
-    statement = models.CharField(max_length=250)
-    topic_group = models.CharField(max_length=250)
-    correct_answer = models.BooleanField()
-
-
-class TeamFact(models.Model):
-
-    id = models.AutoField(primary_key=True)
-    team = models.ForeignKey(Team, on_delete=models.PROTECT)
-    fact = models.ForeignKey(Fact, on_delete=models.PROTECT)
-    team_answer = models.BooleanField()
+    def __str__(self):
+        return self.name
 
 
 class JudgmentFacts(models.Model):
@@ -46,5 +32,30 @@ class JudgmentFacts(models.Model):
     team_length = models.IntegerField()
     fact_max_time = models.TimeField()
     status = StatusField(choices_name='STATUS')
-    fact = models.ManyToManyField(Fact)
     team = models.ManyToManyField(Team)
+
+    def __str__(self):
+        return self.name
+
+
+class Fact(models.Model):
+    id = models.AutoField(primary_key=True)
+    order = models.PositiveIntegerField(validators=[MaxValueValidator(99)], unique=True)
+    statement = models.CharField(max_length=250)
+    topic_group = models.CharField(max_length=250)
+    correct_answer = models.BooleanField()
+    judgment_facts = models.ForeignKey(JudgmentFacts, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.statement
+
+
+class TeamFact(models.Model):
+
+    id = models.AutoField(primary_key=True)
+    team = models.ForeignKey(Team, on_delete=models.PROTECT)
+    fact = models.ForeignKey(Fact, on_delete=models.PROTECT)
+    team_answer = models.BooleanField()
+
+    def __str__(self):
+        return 'Equipe {} - Fato {}'.format(self.team, self.fact.id)
