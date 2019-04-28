@@ -15,16 +15,6 @@ class Group(models.Model):
         return self.name
 
 
-class GroupStudent(models.Model):
-
-    id = models.AutoField(primary_key=True)
-    group = models.ForeignKey(Group, on_delete=models.PROTECT)
-    student = models.ForeignKey(Student, on_delete=models.PROTECT)
-
-    def __str__(self):
-        return 'Turma {} - Aluno {}'.format(self.group.name, self.student.user.name)
-
-
 class Course(models.Model):
 
     id = models.AutoField(primary_key=True)
