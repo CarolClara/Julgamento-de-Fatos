@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 from judgment_facts.models import JudgmentFacts
 from account.models import Student
@@ -23,6 +24,9 @@ class Group(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        reverse('group_detail', kwargs={'slug': self.id})
 
 
 class Program(models.Model):
