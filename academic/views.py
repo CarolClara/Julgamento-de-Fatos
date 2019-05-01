@@ -28,6 +28,7 @@ class GroupCreateView(CreateView):
             group = form.save()
             group.save()
             return HttpResponseRedirect(reverse_lazy('group_detail', args=[group.id]))
+        return render(request, 'group_create.html', {'form': form})
 
 
 class GroupUpdateView(UpdateView):
