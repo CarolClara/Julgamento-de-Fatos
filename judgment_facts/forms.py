@@ -11,9 +11,6 @@ class JudgmentFactsForm(forms.ModelForm):
         fields = ['name', 'team_length', 'fact_max_time', 'status']
         widgets = {
             'name': forms.TextInput(attrs={'placeholder': 'Nome'}),
-            'team_length': forms.IntegerField(attrs={'placeholder': 'Tamanho max. de membros por equipe'}),
-            'fact_max_time': forms.IntegerField(attrs={'placeholder': u'Tamanho max. de exebição do fato'}),
-            'status': forms.ChoiceField(attrs={'placeholder': 'Status'})
         }
 
 
@@ -27,24 +24,23 @@ class FactForm(forms.ModelForm):
             (False, 'Falso'),
         )
         widgets = {
-            'order': forms.TextInput(attrs={'placeholder': 'Nome'}),
             'statement': forms.Textarea(attrs={'placeholder': 'Enunciado do fato'}),
-            'topic_group': forms.IntegerField(attrs={'placeholder': u'Tópico da disciplina'}),
-            'correct_answer': forms.ChoiceField(
-                attrs={'placeholder': 'Resposta correta'}, choices=CORRECT_ANSWER, widget=forms.RadioSelect
-            )
+            'topic_group': forms.TextInput(attrs={'placeholder': 'Tópico da disciplina'}),
+            'correct_answer': forms.ChoiceField(choices=CORRECT_ANSWER, widget=forms.RadioSelect())
         }
 
 
 class TeamFact(forms.ModelForm):
 
+    member = forms.MultipleChoiceField(
+        choices=Student.objects.values_list(
+            'user__name', flat=True
+        ).exclude(pk__in=Team.objects.all()).order_by('user__name')
+    )
+
     class Meta:
         model = Team
         fields = ['name', 'member']
         widgets = {
-            'name': forms.TextInput(attrs={'placeholder': 'Nome'}),
-            'member': forms.MultipleChoiceField(
-                queryset=Student.objects.all().values_list('name', flat=True).exclude(pk__in=Team.objects.all()).order_by('name'),
-                attrs={'placeholder': 'Membros'}
-            )
+            'name': forms.TextInput(attrs={'placeholder': 'Nome'})
         }
