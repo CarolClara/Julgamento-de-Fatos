@@ -61,7 +61,7 @@ body {
     background-color: #76BAC9;
     color: #FFFAFA;
     font-size: 15px;
-    top: 115%;
+    top: 105%;
 }
 
 .information {
@@ -78,6 +78,7 @@ body {
     top: 175px;
     color: #76BAC9;
     right: 445px;
+    margin-bottom: 4%;
 }
 
 #id-signin-user {
