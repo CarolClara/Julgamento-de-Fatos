@@ -1,0 +1,8 @@
+<h1>Turmas</h1>
+<ul>
+    {% for group in object_list %}
+        <li>group</li>
+    {% empty %}
+        <li>Ainda não há turmas cadastradas</li>
+    {% endfor %}
+</ul>

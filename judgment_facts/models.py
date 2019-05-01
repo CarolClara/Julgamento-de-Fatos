@@ -24,14 +24,17 @@ class JudgmentFacts(models.Model):
     FINALIZED = 4
 
     STATUS = Choices(
-        (CREATION, (u'Em criação')), (PREPARATION, (u'Em preparação')), (EXECUTION, (u'Em execução')), (FINALIZED, (u'Finalizado'))
+        (CREATION, u'Em criação'),
+        (PREPARATION, u'Em preparação'),
+        (EXECUTION, u'Em execução'),
+        (FINALIZED, u'Finalizado')
     )
 
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=30)
     team_length = models.IntegerField()
     fact_max_time = models.TimeField()
-    status = StatusField(choices_name='STATUS')
+    status = StatusField(choices_name='STATUS', default=CREATION)
     team = models.ManyToManyField(Team)
 
     def __str__(self):

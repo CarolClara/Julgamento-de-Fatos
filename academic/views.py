@@ -10,6 +10,7 @@ from .models import Group
 
 class GroupListView(ListView):
     model = Group
+    template_name = 'group_list.html'
 
     def get_queryset(self, **kwargs):
         return Group.objects.all().order_by('id')
@@ -18,6 +19,7 @@ class GroupListView(ListView):
 class GroupCreateView(CreateView):
     model = Group
     form_class = GroupForm
+    template_name = 'group_create.html'
 
 
 class GroupUpdateView(UpdateView):

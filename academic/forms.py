@@ -6,9 +6,14 @@ from .models import *
 class GroupForm(forms.ModelForm):
 
     unit = forms.ModelChoiceField(
-        queryset=Unit.objects.all().values_list('name', flat=True).order_by('name'), empty_label='', widget='Unidade')
+        queryset=Unit.objects.values_list('name', flat=True).order_by('name'), empty_label=''
+    )
     program = forms.ModelChoiceField(
-        queryset=Program.objects.all().values_list('name', flat=True).order_by('name'), empty_label='', widget='Curso')
+        queryset=Program.objects.values_list('name', flat=True).order_by('name'), empty_label=''
+    )
+    course = forms.ModelChoiceField(
+        queryset=Course.objects.values_list('name', flat=True).order_by('name'), empty_label=''
+    )
 
     class Meta:
         model = Group
@@ -16,8 +21,4 @@ class GroupForm(forms.ModelForm):
 
         widgets = {
             'name': forms.TextInput(attrs={'placeholder': 'Nome'}),
-            'course': forms.ModelChoiceField(
-                queryset=Course.objects.all().values_list('name', flat=True).order_by('name'),
-                attrs={'placeholder': 'Disciplina'}
-            )
         }
