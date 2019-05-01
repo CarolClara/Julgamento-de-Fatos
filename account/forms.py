@@ -68,7 +68,8 @@ class TeacherForm(UserForm):
 class StudentForm(UserForm):
 
     program = forms.ModelChoiceField(
-        queryset=Program.objects.all().values_list('name', flat=True).order_by('name'), empty_label='')
+        queryset=Program.objects.all().values_list('name', flat=True).order_by('name'), empty_label=''
+    )
 
     def save(self, commit=True):
         program = Program.objects.get(name=self.data.get('program'))

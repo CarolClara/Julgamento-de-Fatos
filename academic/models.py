@@ -14,21 +14,6 @@ class Course(models.Model):
         return self.name
 
 
-class Group(models.Model):
-
-    id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=60)
-    student = models.ManyToManyField(Student)
-    judgment_facts = models.ManyToManyField(JudgmentFacts)
-    course = models.ForeignKey(Course, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.name
-
-    def get_absolute_url(self):
-        reverse('group_detail', kwargs={'slug': self.id})
-
-
 class Program(models.Model):
 
     id = models.AutoField(primary_key=True)
@@ -47,3 +32,20 @@ class Unit(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Group(models.Model):
+
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=60)
+    student = models.ManyToManyField(Student)
+    judgment_facts = models.ManyToManyField(JudgmentFacts, blank=True)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    program = models.ForeignKey(Program, on_delete=models.CASCADE)
+    unit = models.ForeignKey(Unit, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        reverse('app:group_detail', kwargs={'id': self.id})
