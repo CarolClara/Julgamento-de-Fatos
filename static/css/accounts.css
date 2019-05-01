@@ -20,10 +20,17 @@ body {
     box-shadow: rgba(171, 180, 215, 1) 0 2px 10px;
 }
 
+#return_login_page {
+    position: fixed;
+    z-index: 3;
+    top: 33%;
+    left: 29%;
+}
+
 .form_fields_login {
-    position: absolute;
-    right: 395px;
-    top: 255px;
+    position: fixed;
+    right: 35%;
+    top: 25%;
 }
 
 .input-signup input {
@@ -54,7 +61,7 @@ body {
     background-color: #76BAC9;
     color: #FFFAFA;
     font-size: 15px;
-    top: 195px;
+    top: 115%;
 }
 
 .information {
@@ -63,7 +70,6 @@ body {
     font-style: normal;
     font-variant: normal;
     line-height: 30px;
-    position: absolute;
     text-align: center;
     font-size: 30px;
 }
@@ -75,37 +81,47 @@ body {
 }
 
 #id-signin-user {
-    top: 250px;
     color: #FFFAFA;
-    left: 390px;
     font-size: 28px;
 }
 
 #id-signin-information {
     font-family: "Raleway ExtraLight", "Lucida Grande", sans-serif;
-    top: 300px;
     color: #FFFAFA;
-    left: 420px;
     font-size: 18px;
     line-height: 25px;
+    position: fixed;
+    z-index: 3;
+    left: 36%;
+    top: 35%;
 }
 
 #id-btn-signin {
     background-color: #76BAC9;
     color: #FFFAFA;
     border: 2px solid #FFFAFA;
-    position: absolute;
-    left: 455px;
     bottom: 250px;
     border-radius: 15px;
     width: 120px;
     height: 35px;
     font-size: 15px;
+    position: fixed;
+    top: 45%;
+    left: 38%;
 }
 
-#id-back {
-    position: absolute;
-    left: 390px;
-    top: 150px;
+#top-back-teacher {
+    margin: 5%;
     color: #FFFAFA;
+    width: 32%;
+    position: fixed;
+    z-index: 3;
+    top: 12%;
+    left: 14%;
+}
+#return-page-login-teacher {
+    position: fixed;
+    z-index: 3;
+    left: 35%;
+    top: 30%;
 }

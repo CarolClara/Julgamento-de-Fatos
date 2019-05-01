@@ -10,6 +10,13 @@
     line-height: 18.5714px;
 }
 
+body {
+    background: url('/static/images/gradient-background.png') no-repeat center top fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 
 .footer {
     position:absolute;

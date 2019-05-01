@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>if(FACT)</title>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway" type="text/css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Overpass" type="text/css" rel="stylesheet"/>
+    <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" type="text/css" rel="stylesheet"/>
+    <link href="/static/css/accounts.css" rel="stylesheet" />
+    <link href="/static/css/accounts_type.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+<body>
+    <div id="div_principal">
+        <div id="background_2" class="form-custom ax_default box_1">
+            <div class="form-top">
+                <div class="form-top-back">
+                    <i id="id-back" class="fas fa-arrow-left" onclick="location.href='{% url 'login' %}'"></i>
+                </div>
+                <div class="form-top-title">
+                    <span id="id-signup-type" class="information">Se cadastrar como</span>
+                </div>
+            </div>
+            <div id="id-type-options">
+                <button id="btn-teacher" class="signup-type"
+                        onclick="location.href='{% url 'signup_teacher' %}'">PROFESSOR</button>
+                <br><br>
+                <button id="btn-student" class="signup-type"
+                        onclick="location.href='{% url 'signup_student' %}'">ALUNO</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

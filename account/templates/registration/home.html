@@ -1,0 +1,51 @@
+<!-- templates/home.html-->
+{% extends 'registration/base.html' %}
+{% load static %}
+<link href="{% static "assets/css/home_base_page_styles.css" %}" rel="stylesheet" />
+
+{% block title %}Home{% endblock %}
+{% block content %}
+{% if user.is_active %}
+    <div id="base-home">
+        <div id="top-side"></div>
+            <div id="left-side">
+                <div class="vertical-menu">
+                    <div id="user-identification">
+                        <img src="" alt="">
+                        {{ user.username }}
+                    </div>
+                    <div id="menu-home">
+                        <ul id="menu-home-ul">
+                            <li id="menu-home-li">
+                                <a href="#" class="active">Turmas</a>
+                            </li>
+                            <li id="menu-home-li">
+                                <a href="#">Julgamento de Fatos</a>
+                            </li>
+                            <li id="menu-home-li">
+                                <a href="#">Estatísticas</a>
+                            </li>
+                            <li id="menu-home-li">
+                                <a href="#">Configurações</a>
+                            </li>
+                            <li id="menu-home-li">
+                                <a href="#">Sobre</a>
+                            </li>
+                            <li id="menu-home-li">
+                                <a href="#">Ajuda</a>
+                            </li>
+                            <li id="menu-home-li">
+                                <a href="{% url 'login' %}">Sair</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        <div id="right-side"></div>
+        <div id="bot-side"></div>
+    </div>
+{% else %}
+  <p>Sua sessão expirou... </p>
+  <a href="{% url 'login' %}">Entrar</a>
+{% endif %}
+{% endblock %}
