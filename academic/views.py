@@ -25,14 +25,25 @@ class GroupCreateView(CreateView):
 class GroupUpdateView(UpdateView):
     model = Group
     form_class = GroupForm
+    template_name = 'group_update.html'
+
+    def get_object(self, queryset=None):
+        return Group.objects.get(id=self.kwargs['id'])
 
 
 class GroupDetailView(DetailView):
     model = Group
-    template_name = ''
+    template_name = 'group_detail.html'
     context_object_name = 'group'
+
+    def get_object(self, queryset=None):
+        return Group.objects.get(id=self.kwargs['id'])
 
 
 class GroupDeleteView(DeleteView):
     model = Group
     success_url = reverse_lazy('group_list')
+    template_name = 'group_delete.html'
+
+    def get_object(self, queryset=None):
+        return Group.objects.get(id=self.kwargs['id'])
