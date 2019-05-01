@@ -1,3 +1,4 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import DetailView
@@ -17,9 +18,16 @@ class GroupListView(ListView):
 
 
 class GroupCreateView(CreateView):
-    model = Group
-    form_class = GroupForm
-    template_name = 'group_create.html'
+    def get(self, request, *args, **kwargs):
+        context = {'form': GroupForm()}
+        return render(request, 'group_create.html', context)
+
+    def post(self, request, *args, **kwargs):
+        form = GroupForm(request.POST)
+        if form.is_valid():
+            group = form.save()
+            group.save()
+            return HttpResponseRedirect(reverse_lazy('group_detail', args=[group.id]))
 
 
 class GroupUpdateView(UpdateView):

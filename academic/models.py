@@ -48,4 +48,4 @@ class Group(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        reverse('group_detail', kwargs={'slug': self.id})
+        reverse('app:group_detail', kwargs={'id': self.id})
