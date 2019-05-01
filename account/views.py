@@ -7,6 +7,12 @@ from account.forms import TeacherForm, StudentForm
 from .forms import LoginForm
 
 
+def redirect_to_login_page(request):
+    response = redirect('accounts/login')
+
+    return response
+
+
 def login_page(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)

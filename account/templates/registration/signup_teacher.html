@@ -12,50 +12,52 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway" type="text/css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Overpass" type="text/css" rel="stylesheet"/>
     <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" type="text/css" rel="stylesheet"/>
-    <link href="/static/css/accounts.css" rel="stylesheet" />
+    <link href="../../../static/css/accounts.css" rel="stylesheet" />
 </head>
 <body>
     <div id="signup-container" class="ax_default box_1">
 
         <img id="img-signup" src="{% static 'images/signup-background.png' %}"/>
 
-        <i id="id-back" class="fas fa-arrow-left" onclick="location.href='{% url 'signup_type' %}'"></i>
-
-        <label id="id-signin-user" class="information">Bem vindo de volta!</label>
-        <label id="id-signin-information" class="information">Já possui um cadastro?<br>Se conecte ao seu perfil</label>
-        <button id="id-btn-signin" class="btn-registrer" onclick="location.href='{% url 'login' %}'">ENTRAR</button>
-
+        <div id="return_login_page">
+            <div id="top-back-teacher">
+                <i id="id-back-teacher" class="fas fa-arrow-left" onclick="location.href='{% url 'signup_type' %}'"></i>
+            </div>
+            <div id="return-page-login-teacher">
+                <label id="id-signin-user" class="information">Bem vindo de volta!</label>
+                <label id="id-signin-information" class="information">Já possui um cadastro?<br>Se conecte ao seu perfil</label>
+                <button id="id-btn-signin" class="btn-registrer" onclick="location.href='{% url 'login' %}'">ENTRAR</button>
+            </div>
+        </div>
 
         <div class="form_fields_login">
             <div id="id-signup-teacher">
                 <label class="information">Olá, professor!<br>Crie sua conta</label>
             </div>
             <form method="post">
-            {% csrf_token %}
-            <div id="id_name" class="input-signup">
-                {{ form.name.erros }}
-                {{ form.name }}
-            </div>
-                <br>
-            <div id="id_email" class="input-signup">
-                {{ form.email.erros }}
-                {{ form.email }}
-            </div>
-                <br>
-            <div id="id_username" class="input-signup">
-                {{ form.username.erros }}
-                {{ form.username }}
-            </div>
-                <br>
-            <div id="id_username" class="input-signup">
-                {{ form.password.erros }}
-                {{ form.password }}
-            </div>
-                <br><br>
-            <button id="id-btn-signup" class="btn-registrer" type="submit">CADASTRAR</button>
+                {% csrf_token %}
+                <div id="id_name" class="input-signup">
+                    {{ form.name.erros }}
+                    {{ form.name }}
+                </div>
+                    <br>
+                <div id="id_email" class="input-signup">
+                    {{ form.email.erros }}
+                    {{ form.email }}
+                </div>
+                    <br>
+                <div id="id_username" class="input-signup">
+                    {{ form.username.erros }}
+                    {{ form.username }}
+                </div>
+                    <br>
+                <div id="id_username" class="input-signup">
+                    {{ form.password.erros }}
+                    {{ form.password }}
+                    <button id="id-btn-signup" class="btn-registrer" type="submit">CADASTRAR</button>
+                </div>
             </form>
         </div>
-
     </div>
 </body>
 </html>
