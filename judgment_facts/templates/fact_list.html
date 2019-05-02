@@ -1,0 +1,8 @@
+<h1>Fatos</h1>
+<ul>
+    {% for fato in object_list %}
+        <li>{{ fato.name }}</li>
+    {% empty %}
+        <li>Ainda não há Fatos cadastradas</li>
+    {% endfor %}
+</ul>

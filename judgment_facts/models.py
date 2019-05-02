@@ -32,7 +32,7 @@ class JudgmentFacts(models.Model):
 
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=30)
-    team_length = models.IntegerField()
+    team_length = models.PositiveIntegerField()
     fact_max_time = models.TimeField()
     status = StatusField(choices_name='STATUS', default=CREATION)
     team = models.ManyToManyField(Team)

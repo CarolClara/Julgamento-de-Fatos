@@ -27,7 +27,7 @@ class JudgmentFactsCreateView(CreateView):
         if form.is_valid():
             jf = form.save()
             jf.save()
-            return HttpResponseRedirect(reverse_lazy('judgment_facts_detail', args=[jf.id]))
+            return HttpResponseRedirect(reverse_lazy('fact_create', args=[jf.id]))
         return render(request, 'jf_create.html', {'form': form})
 
 
@@ -50,3 +50,72 @@ class JudgmentFactsDeleteView(DeleteView):
     model = JudgmentFacts
     success_url = reverse_lazy('judgment_facts_list')
     template_name = 'jf_delete.html'
+
+
+class FactListView(ListView):
+    model = Fact
+    template_name = 'fact_list.html'
+
+    def get_queryset(self, **kwargs):
+        return Fact.objects.all().order_by('id')
+
+
+class FactCreateView(CreateView):
+    def get(self, request, *args, **kwargs):
+        context = {'form': FactForm()}
+        return render(request, 'fact_create.html', context)
+
+    def post(self, request, *args, **kwargs):
+        form = FactForm(request.POST)
+        if form.is_valid():
+            fact = form.save()
+            fact.save()
+            return HttpResponseRedirect(reverse_lazy('fact_list', args=[fact.id]))
+        return render(request, 'fact_create.html', {'form': form})
+
+
+class FactUpdateView(UpdateView):
+    model = Fact
+    form_class = FactForm
+    template_name = 'fact_update.html'
+
+
+class FactDeleteView(DeleteView):
+    model = Fact
+    success_url = reverse_lazy('fact_list')
+    template_name = 'fact_delete.html'
+
+
+class TeamCreateView(CreateView):
+    def get(self, request, *args, **kwargs):
+        context = {'form': TeamForm()}
+        return render(request, 'team_create.html', context)
+
+    def post(self, request, *args, **kwargs):
+        form = FactForm(request.POST)
+        if form.is_valid():
+            team = form.save()
+            team.save()
+            return HttpResponseRedirect(reverse_lazy('team_detail', args=[team.id]))
+        return render(request, 'team_create.html', {'form': form})
+
+
+class TeamUpdateView(UpdateView):
+    model = Fact
+    form_class = FactForm
+    template_name = 'team_update.html'
+
+
+class TeamDetailView(DetailView):
+    model = Team
+    template_name = 'team_detail.html'
+    context_object_name = 'team'
+
+    def get_object(self, queryset=None):
+        return Team.objects.get(id=self.kwargs['id'])
+
+
+class TeamDeleteView(DeleteView):
+    model = Fact
+    success_url = reverse_lazy('judgment_facts_list')
+    template_name = 'team_delete.html'
