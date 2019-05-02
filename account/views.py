@@ -38,7 +38,7 @@ def signup_teacher(request):
 
         if form.is_valid():
             form.save()
-            return redirect(request, "registration/home.html")
+            return render(request, "registration/home.html")
     else:
         form = TeacherForm()
         return render(request, "registration/signup_teacher.html", {'form': form})

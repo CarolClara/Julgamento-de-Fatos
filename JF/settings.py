@@ -116,4 +116,6 @@ LOGOUT_REDIRECT_URL = '/'
 
 AUTH_USER_MODEL = "account.User"
 
-# AUTH_USER_MODEL = 'jf_accounts.User'
+PASSWORD_HASHERS = (
+    'django.contrib.auth.hashers.MD5PasswordHasher',
+)

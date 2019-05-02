@@ -2,6 +2,7 @@ import re
 
 from django import forms
 from django.contrib.auth import authenticate
+from django.contrib.auth.hashers import make_password
 
 from academic.models import Program
 from .models import *
@@ -34,7 +35,8 @@ class UserForm(forms.ModelForm):
     def save(self, commit=True):
         data = self.data
         return User.objects.create(
-            name=data['name'], email=data['email'], username=data['username'], password=data['password'])
+            name=data['name'], email=data['email'], username=data['username'],
+            password=make_password(data['password'], None, 'md5'))
 
     def is_valid(self):
         username = self.data.get('username')
