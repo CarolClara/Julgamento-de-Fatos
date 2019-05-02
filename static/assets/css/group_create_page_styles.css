@@ -23,6 +23,47 @@ body {
     padding-bottom: 70%;
 }
 
+.input-signup {
+    margin-top: 12%;
+}
+
+.input-signup input {
+    border-bottom: 1px solid;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    width: 300px;
+    height: 20px;
+}
+
+.input-signup select {
+    border-bottom: 1px solid;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    width: 300px;
+    height: 20px;
+}
+
+#title-text {
+    position: fixed;
+    color: #76BAC9;
+    margin-top: 2%;
+    margin-left: 18%;
+}
+
+#right-center-content {
+    width: 900px;
+    height: 500px;
+    margin-top: 11%;
+    position: fixed;
+    margin-left: 30%;
+    margin-right: auto;
+    background-color: #FFFAFA;
+    border-radius: 20px;
+    box-shadow: rgba(171, 180, 215, 1) 0 2px 20px;
+}
+
 ul {
     list-style-type: none;
     padding-left: 20px;
