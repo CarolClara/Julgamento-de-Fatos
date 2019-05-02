@@ -11,7 +11,7 @@
 }
 
 body {
-    background: url('/static/images/gradient-background.png') no-repeat center top fixed;
+    background: url('/static/images/background_main_system.png') no-repeat center top fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -57,10 +57,12 @@ li a {
     margin: 0;
     padding: 0;
     width: 15%;
+    top: 0;
     background-color: #FFFAFA;
     position: fixed;
     height: 100%;
     overflow: auto;
+    box-shadow: 5px 10px #888888;
 }
 
 
