@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Overpass" type="text/css" rel="stylesheet"/>
     <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" type="text/css" rel="stylesheet"/>
     <link href="../../../static/assets/css/home_base_page_styles.css" rel="stylesheet" />
+      <script src="{% static 'assets/js/home_base_scripts.js' %}"></script>
 </head>
 <body>
 {% if user.is_active %}
@@ -29,22 +30,22 @@
                             <li id="menu-home-li">
                                 <a href="{% url 'group_list' %}" class="active">Turmas</a>
                             </li>
-                            <li id="menu-home-li">
+                            <li class="menu-home-li">
                                 <a href="#">Julgamento de Fatos</a>
                             </li>
-                            <li id="menu-home-li">
+                            <li class="menu-home-li">
                                 <a href="#">Estatísticas</a>
                             </li>
-                            <li id="menu-home-li">
+                            <li class="menu-home-li">
                                 <a href="#">Configurações</a>
                             </li>
-                            <li id="menu-home-li">
+                            <li class="menu-home-li">
                                 <a href="#">Sobre</a>
                             </li>
-                            <li id="menu-home-li">
+                            <li class="menu-home-li">
                                 <a href="#">Ajuda</a>
                             </li>
-                            <li id="menu-home-li">
+                            <li class="menu-home-li">
                                 <a href="{% url 'login' %}">Sair</a>
                             </li>
                         </ul>

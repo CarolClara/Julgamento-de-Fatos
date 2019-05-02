@@ -56,14 +56,16 @@ li a {
 .vertical-menu{
     margin: 0;
     padding: 0;
-    width: 15%;
+    max-width: 100%;
     top: 0;
     background-color: #FFFAFA;
     position: fixed;
     height: 100%;
-    overflow: auto;
+    overflow: hidden;
     box-shadow: 5px 10px #888888;
 }
 
+.menu-home-li {
 
+}
 
