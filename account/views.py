@@ -13,6 +13,12 @@ def redirect_to_login_page(request):
     return response
 
 
+def redirect_to_group_page(request):
+    response = redirect('academic/')
+
+    return response
+
+
 def login_page(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
