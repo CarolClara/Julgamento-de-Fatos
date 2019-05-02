@@ -1,10 +1,63 @@
+* {
+    font-weight: 700;
+    line-height: 26.4px;
+    font-family: Raleway;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
+    line-height: 15.4px;
+    font-family: Raleway;
+    line-height: 18.5714px;
+}
 
+body {
+    background: url('/static/images/gradient-background.png') no-repeat center top fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    text-align: center;
+}
+
+#user-identification {
+    padding-bottom: 70%;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+LI {
+    padding-bottom: 15%;
+}
+
+li a {
+    border-radius: 20px 0 0 20px;
+}
+
+.vertical-menu a {
+    background-color: #FFFAFA;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.vertical-menu a:hover {
+    background-color: #76BAC9;
+}
+
+.vertical-menu a.active {
+    background-color: #76BAC9;
+    color: #FFFAFA;
+}
 
 .vertical-menu{
     margin: 0;
     padding: 0;
-    width: 200px;
-    background-color: #f1f1f1;
+    width: 15%;
+    background-color: #FFFAFA;
     position: fixed;
     height: 100%;
     overflow: auto;

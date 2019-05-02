@@ -1,10 +1,20 @@
 <!-- templates/home.html-->
-{% extends 'registration/base.html' %}
 {% load static %}
-<link href="{% static "assets/css/home_base_page_styles.css" %}" rel="stylesheet" />
-
-{% block title %}Home{% endblock %}
-{% block content %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Home-Page</title>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" type="text/css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Overpass" type="text/css" rel="stylesheet"/>
+    <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" type="text/css" rel="stylesheet"/>
+    <link href="../../../static/assets/css/home_base_page_styles.css" rel="stylesheet" />
+</head>
+<body>
 {% if user.is_active %}
     <div id="base-home">
         <div id="top-side"></div>
@@ -17,10 +27,10 @@
                     <div id="menu-home">
                         <ul id="menu-home-ul">
                             <li id="menu-home-li">
-                                <a href="#" class="active">Turmas</a>
+                                <a href="{% url 'group_list' %}" class="active">Turmas</a>
                             </li>
                             <li id="menu-home-li">
-                                <a href="#">Julgamento de Fatos</a>
+                                <a href="">Julgamento de Fatos</a>
                             </li>
                             <li id="menu-home-li">
                                 <a href="#">Estatísticas</a>
@@ -48,4 +58,5 @@
   <p>Sua sessão expirou... </p>
   <a href="{% url 'login' %}">Entrar</a>
 {% endif %}
-{% endblock %}
+</body>
+</html>
