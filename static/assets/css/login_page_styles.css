@@ -18,23 +18,40 @@ body {
     background-size: cover;
 }
 
-.footer {
-    position:absolute;
-    bottom:15px;
-    width:100%;
+#base {
+    margin-top: 100px;
+    max-width: 780px;
+    min-width: 500px;
+}
+
+#img-signup {
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    border-radius: 15px;
+    box-shadow: rgba(171, 180, 215, 1) 0 2px 10px;
 }
 
 #fazer_login {
+    margin-top: 12%;
     padding-left: 51px;
     color: #76BAC9;
 }
 
+.col-sm-12 {
+    position: absolute;
+}
+
 #login_page_login {
     z-index: 10;
-    padding-left: 124px;
     position: absolute;
-    padding-top: 104px;
     width: 780px;
+}
+#login_page_singup {
+    z-index: 10;
+    position: absolute;
+    width: 780px;
+    left: 46%;
 }
 
 #login_page_login_button {
@@ -51,59 +68,28 @@ body {
     border-style: solid;
 }
 
-#base {
-    margin-top: 100px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 45%;
-}
-
-#u0 {
-    position: absolute;
-    z-index: 1;
-}
-
-#u1 {
-    position: absolute;
-    z-index: 2;
-    padding-top: 50px;
-    padding-left: 65px;
-}
-
-#u2 {
-    position: absolute;
-    z-index: 3;
-    padding-left: 403px;
-    padding-top: 50px;
-}
-
 #u9 {
-    position: absolute;
+    margin-top: 12%;
     z-index: 6;
-    padding-left: 439px;
-    padding-top: 160px;
     color: white;
     font-size: 28px;
     font-weight: 700;
 }
 
-#u10 {
-    position: absolute;
+#texto-menor {
+    margin-top: 12%;
+    margin-right: 40%;
     z-index: 6;
-    padding-left: 433px;
-    padding-top: 218px;
     color: white;
     text-align: center;
     font-size: 14px;
 
 }
 
-#u11 {
-    position: absolute;
+#u11_button {
+    margin-top: 12%;
     z-index: 6;
-    padding-left: 487px;
-    padding-top: 270px;
+    margin-left: 15%;
 }
 
 #u11_button {
@@ -114,10 +100,11 @@ body {
     padding: 10px 35px;
     border-radius: 40px;
     text-align: center;
-    margin-left: -26px;
+    margin-left: 13px;
     border-style: solid;
     z-index: 15;
     margin-top: 30px;
+    font-size: 16px;
 }
 
 .login_input{
@@ -126,14 +113,6 @@ body {
     border-right: none;
     border-left: none;
     border-top: none;
-}
-
-.form-errors {
-    padding-left: 0;
-    list-style: none;
-    margin-right: 534px;
-    font-size: 13px;
-    color: orangered;
 }
 
 #username {

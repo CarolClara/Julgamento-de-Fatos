@@ -1,5 +1,4 @@
-﻿ <!-- templates/registration/login.html -->
- {% load static %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -13,65 +12,49 @@
     <link href="https://fonts.googleapis.com/css?family=Overpass" type="text/css" rel="stylesheet"/>
     <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" type="text/css" rel="stylesheet"/>
     <link href="../../../static/assets/css/login_page_styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="base" class="">
+    <div id="base" class="container">
 
-      <!-- Unnamed (Rectangle) -->
-      <div id="u1" class="ax_default box_1">
-        <img id="u1_img" class="img " src="{% static "assets/img/u1.png" %}"/>
-      </div>
 
-      <!-- Unnamed (Rectangle) -->
-      <div id="u2" class="ax_default box_2">
-        <img id="u2_img" class="img " src="{% static "assets/img/u2.png" %}"/>
-      </div>
-
-      <div id="login_page_login">
-            <h2 id="fazer_login">Fazer login</h2>
-            <form method="post">
-              {% csrf_token %}
-            <div class="control-group">
-                <label class="control-label" for="username"></label>
-                <div class="controls">
-                    <input type="text" class="login_input" id="username" name="username"  placeholder="Usuário">
+        <div class="row">
+            <img id="img-signup" src="{% static 'images/login-background.png' %}"/>
+            <div class="col-sm-12">
+                <div id="login_page_login" class="col-sm-6">
+                    <h2 id="fazer_login">Fazer login</h2>
+                    <form method="post">
+                      {% csrf_token %}
+                    <div class="control-group">
+                        <label class="control-label" for="username"></label>
+                        <div class="controls">
+                            <input type="text" class="login_input" id="username" name="username"  placeholder="Usuário">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="password"></label>
+                        <div class="controls">
+                            <input type="password" class="login_input" name="password" id="password" placeholder="Senha">
+                        </div>
+                    </div>
+                      <button id="login_page_login_button" type="submit">ENTRAR</button>
+                    </form>
+                </div>
+                <div id="login_page_singup" class="col-sm-6">
+                    <div id="u9" class="ax_default paragraph">
+                        <div id="u9_div" class=""></div>
+                        <div id="u9_text" class="text ">
+                          <p><span>Olá, bem vindo!</span></p>
+                          <p id="texto-menor"><span>Entre com seus dados pessoais e <br> inicie sua jornada conosco!</span></p>
+                          <button id="u11_button" type="submit" onclick="location.href='{% url 'signup_type' %}'">CADASTRAR</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="control-group">
-                <label class="control-label" for="password"></label>
-                <div class="controls">
-                    <input type="password" class="login_input" name="password" id="password" placeholder="Senha">
-                </div>
-            </div>
-              <button id="login_page_login_button" type="submit">ENTRAR</button>
-            </form>
-            <!-- Unnamed (Rectangle) -->
-      </div>
-
-      <!-- Unnamed (Rectangle) -->
-      <div id="u9" class="ax_default paragraph">
-        <div id="u9_div" class=""></div>
-        <div id="u9_text" class="text ">
-          <p><span>Olá, bem vindo!</span></p>
         </div>
-      </div>
-
-      <!-- Unnamed (Rectangle) -->
-      <div id="u10" class="ax_default paragraph">
-        <div id="u10_div" class=""></div>
-        <div id="u10_text" class="text ">
-          <p><span>Entre com seus dados pessoais e <br> inicie sua jornada conosco!</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Rectangle) -->
-      <div id="u11" class="ax_default primary_button">
-        <div id="u11_div" class=""></div>
-        <div id="u11_text" class="text ">
-          <button id="u11_button" type="submit" onclick="location.href='{% url 'signup_type' %}'">CADASTRAR</button>
-        </div>
-      </div>
     </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 </html>
-
