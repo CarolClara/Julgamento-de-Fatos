@@ -1,41 +1,44 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login as login_django, logout as logout_django
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import AuthenticationForm
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse
 
 from account.forms import TeacherForm, StudentForm
-from .forms import LoginForm
 
 
-def redirect_to_login_page(request):
-    response = redirect('accounts/login')
-
-    return response
-
-
-def redirect_to_group_page(request):
-    response = redirect('academic/')
-
-    return response
+@login_required
+def home(request):
+    return render(request, 'registration/home.html')
 
 
-def login_page(request):
+def login(request):
     if request.method == 'POST':
-        form = LoginForm(request.POST)
 
-        username = request.POST['username']
-        password = request.POST['password']
+        form = AuthenticationForm(request=request, data=request.POST)
 
-        user = authenticate(username=username, password=password)
-
-        if user:
-            login(request, user)
-            return render(request, 'registration/home.html')
+        if form.is_valid():
+            username = request.POST.get('username')
+            password = request.POST.get('password')
+            user = authenticate(username=username, password=password)
+            if user and user.is_active:
+                request.session['user_id'] = user.id
+                login_django(request, user)
+            return HttpResponseRedirect(reverse('home'))
         else:
-            return HttpResponse("Dados informados são inválidos")
-    else:
-        form = LoginForm()
-        return render(request, 'registration/login.html', {'form': form})
+            return HttpResponse("Nome de usuário ou senha estão incorretos")
+
+    return render(request, 'registration/login.html', {'form': AuthenticationForm(request)})
+
+
+def logout(request):
+    try:
+        del request.session['user_id']
+        logout_django(request)
+    except:
+        pass
+    return HttpResponseRedirect(reverse('login'))
 
 
 def signup_teacher(request):
@@ -64,3 +67,7 @@ def signup_student(request):
 
 def signup_type(request):
     return render(request, "registration/signup_type.html")
+
+
+def redirect_to_login_page(request):
+    return HttpResponseRedirect(reverse('login'))

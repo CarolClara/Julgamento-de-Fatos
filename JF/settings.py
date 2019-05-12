@@ -1,5 +1,7 @@
 import os
 
+from django.urls import reverse_lazy
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = 'n+q8bpiudy_x-#4cjjrw4yi5r_srcal@i%2_io(7@q2)1fq-4n'
@@ -112,8 +114,9 @@ STATICFILES_DIRS = [
 
 ]
 
+LOGIN_URL = '/accounts/login'
 LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/accounts/logout/'
 
 AUTH_USER_MODEL = "account.User"
 
