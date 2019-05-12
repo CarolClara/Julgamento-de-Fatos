@@ -40,18 +40,20 @@ body {
 
 .col-sm-12 {
     position: absolute;
+    margin-left: 150px;
 }
 
 #login_page_login {
     z-index: 10;
     position: absolute;
     width: 780px;
+    margin-left: -135px;
 }
 #login_page_singup {
     z-index: 10;
     position: absolute;
     width: 780px;
-    left: 46%;
+    margin-left: 190px;
 }
 
 #login_page_login_button {
