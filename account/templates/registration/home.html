@@ -12,52 +12,56 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway" type="text/css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Overpass" type="text/css" rel="stylesheet"/>
     <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" type="text/css" rel="stylesheet"/>
-    <link href="../../../static/assets/css/home_base_page_styles.css" rel="stylesheet" />
-      <script src="{% static 'assets/js/home_base_scripts.js' %}"></script>
+    <link href="../../../static/css/home_base_page_styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="{% static 'assets/js/home_base_scripts.js' %}"></script>
 </head>
 <body>
-{% if user.is_active %}
-    <div id="base-home">
-        <div id="top-side"></div>
-            <div id="left-side">
-                <div class="vertical-menu">
-                    <div id="user-identification">
-                        <img src="" alt="">
-                        {{ user.username }}
-                    </div>
-                    <div id="menu-home">
-                        <ul id="menu-home-ul">
-                            <li id="menu-home-li">
-                                <a href="{% url 'group_list' %}" class="active">Turmas</a>
-                            </li>
-                            <li class="menu-home-li">
-                                <a href="#">Julgamento de Fatos</a>
-                            </li>
-                            <li class="menu-home-li">
-                                <a href="#">Estatísticas</a>
-                            </li>
-                            <li class="menu-home-li">
-                                <a href="#">Configurações</a>
-                            </li>
-                            <li class="menu-home-li">
-                                <a href="#">Sobre</a>
-                            </li>
-                            <li class="menu-home-li">
-                                <a href="#">Ajuda</a>
-                            </li>
-                            <li class="menu-home-li">
-                                <a href="{% url 'logout' %}">Sair</a>
-                            </li>
-                        </ul>
-                    </div>
+<div id="id-container" class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div id="menu-vertical-left" class="col-sm-3">
+                {% if user.is_active %}
+                <div id="user-identification">
+                    <img src="" alt="">
+                    {{ user.username }}
                 </div>
+                <ul id="menu-home-ul" class="nav nav-pills">
+                    <li class="menu-home-li">
+                        <a href="{% url 'group_list' %}" class="active">Turmas</a>
+                    </li>
+                    <li class="menu-home-li">
+                        <a href="#">Julgamento de Fatos</a>
+                    </li>
+                    <li class="menu-home-li">
+                        <a href="#">Estatísticas</a>
+                    </li>
+                    <li class="menu-home-li">
+                        <a href="#">Configurações</a>
+                    </li>
+                    <li class="menu-home-li">
+                        <a href="#">Sobre</a>
+                    </li>
+                    <li class="menu-home-li">
+                        <a href="#">Ajuda</a>
+                    </li>
+                    <li class="menu-home-li">
+                        <a href="{% url 'login' %}">Sair</a>
+                    </li>
+                </ul>
             </div>
-        <div id="right-side"></div>
-        <div id="bot-side"></div>
+            {% else %}
+              <p>Sua sessão expirou... </p>
+              <a href="{% url 'login' %}">Entrar</a>
+            {% endif %}
+            <div id="home-content" class="col-sm-9">
+
+            </div>
+        </div>
     </div>
-{% else %}
-  <p>Sua sessão expirou... </p>
-  <a href="{% url 'login' %}">Entrar</a>
-{% endif %}
+</div>
 </body>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </html>
