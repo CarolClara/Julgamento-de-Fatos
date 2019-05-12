@@ -42,7 +42,7 @@ body {
 }
 
 #user-identification {
-    height: 200px;
+    height: 150px;
     background-color:#FFFAFA;
 }
 
@@ -55,10 +55,10 @@ body {
 
 
 #menu-home-ul > li {
-    margin-bottom: 50px;
+    margin-bottom: 36px;
     text-align: center;
     background-color: #76BAC9;
-    padding: 15px;
+    padding: 10px;
     border-radius: 20px 0 0 20px;
 }
 
