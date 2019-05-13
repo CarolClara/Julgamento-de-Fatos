@@ -20,7 +20,7 @@
         <div id="login-container">
             <div class="col-sm-12">
                 <div id="login_page_login" class="col-sm-6">
-                    <h2 id="fazer_login">Fazer login</h2>
+                    <h2 id="fazer-login">Fazer login</h2>
                     <form method="post">
                       {% csrf_token %}
                     <div class="control-group">
@@ -35,16 +35,16 @@
                             <input type="password" class="login_input" name="password" id="password" placeholder="Senha">
                         </div>
                     </div>
-                      <button id="login_page_login_button" type="submit">ENTRAR</button>
+                      <button id="login_button" type="submit">ENTRAR</button>
                     </form>
                 </div>
                 <div id="login_page_singup" class="col-sm-6">
-                    <div id="u9" class="ax_default paragraph">
+                    <div id="signup-container" class="ax_default paragraph">
                         <div id="u9_div" class=""></div>
                         <div id="u9_text" class="text ">
-                          <p><span>Olá, bem vindo!</span></p>
-                          <p id="texto-menor"><span>Entre com seus dados pessoais e <br> inicie sua jornada conosco!</span></p>
-                          <button id="u11_button" type="submit" onclick="location.href='{% url 'signup_type' %}'">CADASTRAR</button>
+                          <p><span id="text-hello">Olá, bem vindo!</span></p>
+                          <p id="texto-menor"><span>Entre com seus dados pessoais e inicie sua jornada conosco!</span></p>
+                          <button id="login-btn" type="submit" onclick="location.href='{% url 'signup_type' %}'">CADASTRAR</button>
                         </div>
                     </div>
                 </div>
