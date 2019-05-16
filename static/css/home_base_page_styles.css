@@ -54,7 +54,6 @@ body {
     background-color: #FFFAFA;
 }
 
-
 #menu-home-ul > li {
     margin-bottom: 36px;
     text-align: center;
@@ -65,6 +64,8 @@ body {
 
 #menu-home-ul > li > a {
     color: white;
+    text-decoration: none;
+    display: block;
 }
 
 

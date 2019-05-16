@@ -20,44 +20,42 @@
 <body>
 <div id="id-container" class="container">
     <div class="row">
-        <div class="col-sm-12">
-            <div id="menu-vertical-left" class="col-sm-3">
-                {% if user.is_active %}
-                <div id="user-identification">
-                    <img src="" alt="">
-                    {{ user.username }}
-                </div>
-                <ul id="menu-home-ul" class="nav nav-pills">
-                    <li class="menu-home-li">
-                        <a href="{% url 'group_list' %}" class="active">Turmas</a>
-                    </li>
-                    <li class="menu-home-li">
-                        <a href="#">Julgamento de Fatos</a>
-                    </li>
-                    <li class="menu-home-li">
-                        <a href="#">Estatísticas</a>
-                    </li>
-                    <li class="menu-home-li">
-                        <a href="#">Configurações</a>
-                    </li>
-                    <li class="menu-home-li">
-                        <a href="#">Sobre</a>
-                    </li>
-                    <li class="menu-home-li">
-                        <a href="#">Ajuda</a>
-                    </li>
-                    <li class="menu-home-li">
-                        <a href="{% url 'login' %}">Sair</a>
-                    </li>
-                </ul>
+        <div id="menu-vertical-left" class="col-sm-3">
+            {% if user.is_active %}
+            <div id="user-identification">
+                <img src="" alt="">
+                {{ user.username }}
             </div>
-            {% else %}
-              <p>Sua sessão expirou... </p>
-              <a href="{% url 'login' %}">Entrar</a>
-            {% endif %}
-            <div id="home-content" class="col-sm-9">
+            <ul id="menu-home-ul" class="nav nav-pills">
+                <li class="menu-home-li">
+                    <a href="{% url 'group_list' %}" class="active">Turmas</a>
+                </li>
+                <li class="menu-home-li">
+                    <a href="#">Julgamento de Fatos</a>
+                </li>
+                <li class="menu-home-li">
+                    <a href="#">Estatísticas</a>
+                </li>
+                <li class="menu-home-li">
+                    <a href="#">Configurações</a>
+                </li>
+                <li class="menu-home-li">
+                    <a href="#">Sobre</a>
+                </li>
+                <li class="menu-home-li">
+                    <a href="#">Ajuda</a>
+                </li>
+                <li class="menu-home-li">
+                    <a href="{% url 'login' %}">Sair</a>
+                </li>
+            </ul>
+        </div>
+        {% else %}
+          <p>Sua sessão expirou... </p>
+          <a href="{% url 'login' %}">Entrar</a>
+        {% endif %}
+        <div id="home-content" class="col-sm-9">
 
-            </div>
         </div>
     </div>
 </div>
