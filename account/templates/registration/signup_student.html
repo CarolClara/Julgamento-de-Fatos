@@ -19,42 +19,49 @@
 <body>
     <div id="base">
         <div id="signup-container">
-            <div id="signup-content" class="col-sm-6" >
-                <i id="id-back-teacher" class="fas fa-arrow-left" onclick="location.href='{% url 'signup_type' %}'"></i>
-                <h1 id="id-signin-user" class="information">Bem vindo de volta!</h1>
-                <h2 id="id-signin-information" class="information">Já possui um cadastro?<br>Se conecte ao seu perfil</h2>
-                <button id="id-btn-signin" class="btn-registrer" onclick="location.href='{% url 'login' %}'">ENTRAR</button>
+            <div class="col-sm-12">
+                <div id="signup-content" class="col-sm-6" >
+                    <i id="id-back" class="fas fa-arrow-left" onclick="location.href='{% url 'signup_type' %}'"></i>
+                    <div id="signup-container" class="ax_default paragraph">
+                        <div id="u9_div" class=""></div>
+                        <div id="u9_text" class="text ">
+                            <p id="id-signin-user" class="information"><span>Bem vindo de volta!</span></p>
+                            <p id="id-signin-information" class="information"><span>Já possui um cadastro? Se conecte ao seu perfil</span></p>
+                        </div>
+                        <button id="id-btn-signin" class="btn-registrer" onclick="location.href='{% url 'login' %}'">ENTRAR</button>
+                    </div>
+                </div>
+                <div id="form-container" class="col-sm-6">
+                    <h2 id="text-singup" class="information">Olá, estudante!<br>Crie sua conta</h2>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div id="id_name" class="input-signup">
+                            {{ form.name.erros }}
+                            {{ form.name }}
+                        </div>
+                            <br>
+                        <div id="id_email" class="input-signup">
+                            {{ form.email.erros }}
+                            {{ form.email }}
+                        </div>
+                            <br>
+                        <div id="id_username" class="input-signup">
+                            {{ form.username.erros }}
+                            {{ form.username }}
+                        </div>
+                            <br>
+                        <div id="id_password" class="input-signup">
+                            {{ form.password.erros }}
+                            {{ form.password }}
+                        </div>
+                        <div id="id_program" class="input-signup">
+                            {{ form.program.erros }}
+                            {{ form.program }}
+                        </div>
+                        <button id="id-btn-signup" class="btn-registrer" type="submit">CADASTRAR</button>
+                    </form>
+               </div>
             </div>
-            <div id="form-container" class="col-sm-6">
-                <h2 id="text-singup" class="information">Olá, estudante!<br>Crie sua conta</h2>
-                <form method="post">
-                    {% csrf_token %}
-                    <div id="id_name" class="input-signup">
-                        {{ form.name.erros }}
-                        {{ form.name }}
-                    </div>
-                        <br>
-                    <div id="id_email" class="input-signup">
-                        {{ form.email.erros }}
-                        {{ form.email }}
-                    </div>
-                        <br>
-                    <div id="id_username" class="input-signup">
-                        {{ form.username.erros }}
-                        {{ form.username }}
-                    </div>
-                        <br>
-                    <div id="id_password" class="input-signup">
-                        {{ form.password.erros }}
-                        {{ form.password }}
-                    </div>
-                    <div id="id_program" class="input-signup">
-                        {{ form.program.erros }}
-                        {{ form.program }}
-                    </div>
-                    <button id="id-btn-signup" class="btn-registrer" type="submit">CADASTRAR</button>
-                </form>
-           </div>
         </div>
     </div>
 </body>

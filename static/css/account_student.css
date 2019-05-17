@@ -1,4 +1,5 @@
 * {
+    font-weight: 700;
     font-style: normal;
     font-variant: normal;
     line-height: 15px;
@@ -46,43 +47,48 @@ body {
 
 #id-back {
     color: #FFFAFA;
-    margin-left: -10px;
-    margin-top: 15px;
+    margin-left: 10px;
+    margin-top: 10px;
     position: absolute;
     cursor: pointer;
 }
 
 #id-signin-user {
+    font-family: Raleway, "Lucida Grande", sans-serif;
     font-weight: 700;
     font-style: normal;
     font-variant: normal;
-    line-height: initial;
+    line-height: 55px;
     text-align: right;
+    font-size: 24px;
     color: #FFFAFA;
+    margin: 16px;
     position: absolute;
-    margin-top: 70%;
-    margin-left: -60px;
-    font-size: 28px;
+    margin-top: 179px;
+    margin-left: -48px;
 }
 
 #id-signin-information{
-    font-weight: 500;
-    font-style: normal;
-    font-variant: normal;
-    text-align: center;
-    font-size: 15px;
-    color: #FFFAFA;
-    line-height: initial;
-    position: absolute;
-    margin-left: -50px;
-    margin-right: 15%;
-    margin-top: 83%;
-}
-
-.information {
+    font-family: Raleway, "Lucida Grande", sans-serif;
     font-weight: 700;
     font-style: normal;
     font-variant: normal;
+    line-height: 55px;
+    text-align: right;
+    font-size: 16px;
+    color: #FFFAFA;
+    margin: 16px;
+    position: absolute;
+    margin-top: 240px;
+    margin-left: -34px;
+}
+
+.information {
+    font-family: Raleway, "Lucida Grande", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-variant: normal;
+    line-height: 55px;
     text-align: right;
     font-size: 20px;
     color: #76BAC9;
@@ -94,17 +100,18 @@ body {
 
 
 #id-btn-signin {
+    background: transparent;
     background-color: transparent;
     color: white;
     border-color: white;
-    padding: 10px 50px;
-    border-radius: 25px;
+    padding: 10px 35px;
+    border-radius: 40px;
     text-align: center;
     border-style: solid;
     z-index: 15;
     font-size: 16px;
-    margin-top: 30%;
-    margin-left: 7%;
+    margin-top: 240px;
+    margin-left: 50px;
 }
 
 .input-signup {
@@ -160,20 +167,14 @@ body {
 #form-container {
     position: absolute;
     margin-top: 50px;
-    margin-left: 300px;
+    margin-left: 280px;
 }
 
 #text-singup {
-    margin-top: 35%;
-    margin-left: 5%;
+    margin-top: 85px;
 }
 
 form {
     margin-top: 61px;
     margin-left: 27px;
-}
-
-#id_program {
-    margin-top: 5px;
-    width: 100%;
 }
