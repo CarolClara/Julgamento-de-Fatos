@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <title>Home-Page</title>
+    <title>Group-Page</title>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -12,70 +12,88 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway" type="text/css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Overpass" type="text/css" rel="stylesheet"/>
     <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" type="text/css" rel="stylesheet"/>
-    <link href="../../static/assets/css/group_create_page_styles.css" rel="stylesheet" />
+    <link href="../../static/css/group_create_page_styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="{% static 'assets/js/home_base_scripts.js' %}"></script>
 </head>
 <body>
-{% if user.is_active %}
-    <div id="base-home">
-        <div id="top-side">
-            <div id="title-text">
-                <h1>Turmas</h1>
+<div id="id-container" class="container">
+    <div class="row">
+        <div id="menu-vertical-left" class="col-sm-3">
+            {% if user.is_active %}
+            <div id="user-identification">
+                <img src="" alt="">
+                {{ user.username }}
             </div>
-            <div id="search-bar">
-                <input type="text" placeholder="Pesquisar Turmas">
-                <button type="submit"><i class="fa fa-search"></i></button>
-            </div>
+            <ul id="menu-home-ul" class="nav nav-pills">
+                <li class="menu-home-li">
+                    <a href="{% url 'group_list' %}" class="active">Turmas</a>
+                </li>
+                <li class="menu-home-li">
+                    <a href="#">Julgamento de Fatos</a>
+                </li>
+                <li class="menu-home-li">
+                    <a href="#">Estatísticas</a>
+                </li>
+                <li class="menu-home-li">
+                    <a href="#">Configurações</a>
+                </li>
+                <li class="menu-home-li">
+                    <a href="#">Sobre</a>
+                </li>
+                <li class="menu-home-li">
+                    <a href="#">Ajuda</a>
+                </li>
+                <li class="menu-home-li">
+                    <a href="{% url 'login' %}">Sair</a>
+                </li>
+            </ul>
         </div>
-            <div id="left-side">
-                <div class="vertical-menu">
-                    <div id="user-identification">
-                        <img src="" alt="">
-                        {{ user.username }}
-                    </div>
-                    <div id="menu-home">
-                        <ul id="menu-home-ul">
-                            <li id="menu-home-li">
-                                <a href="{% url 'group_list' %}" class="active">Turmas</a>
-                            </li>
-                            <li id="menu-home-li">
-                                <a href="#">Julgamento de Fatos</a>
-                            </li>
-                            <li id="menu-home-li">
-                                <a href="#">Estatísticas</a>
-                            </li>
-                            <li id="menu-home-li">
-                                <a href="#">Configurações</a>
-                            </li>
-                            <li id="menu-home-li">
-                                <a href="#">Sobre</a>
-                            </li>
-                            <li id="menu-home-li">
-                                <a href="#">Ajuda</a>
-                            </li>
-                            <li id="menu-home-li">
-                                <a href="{% url 'login' %}">Sair</a>
-                            </li>
-                        </ul>
-                    </div>
+        {% else %}
+          <p>Sua sessão expirou... </p>
+          <a href="{% url 'login' %}">Entrar</a>
+        {% endif %}
+        <div id="home-content" class="col-sm-9">
+            <div id="title">
+                <h1>Turmas</h1>
+                <div id="searchbar">
+                    <input type="text" placeholder="Pesquisar em Turmas">
+                    <button type="submit"><i class="fa fa-search"></i></button>
                 </div>
             </div>
-        <div id="right-side">
             <div id="right-center-content">
-                <h1>Turmas</h1>
-                <ul>
+                <ul id="head-group-presentation">
+                    <li class="li-head-group"><span class="span-head-group">Nome</span></li>
+                    <li class="li-head-group"><span class="span-head-group">ID</span></li>
+                    <li class="li-head-group"><span class="span-head-group">Disciplina</span></li>
+                    <li class="li-head-group"><span class="span-head-group">Curso</span></li>
+                    <li class="li-head-group"><span class="span-head-group">Unidade</span></li>
+                    <li class="li-head-group"><span class="span-head-group">Ações</span></li>
+                </ul>
+                <div id="line"></div>
+                <ul id="body-group-presentation">
                     {% for group in object_list %}
-                        <li>{{ group.name }}</li>
+                        <li class="li-body-group"><span class="span-body-group">{{ group.name }}</span></li>
+                        <li class="li-body-group"><span class="span-body-group">{{ group.id }}</span></li>
+                        <li class="li-body-group"><span class="span-body-group">{{ group.program }}</span></li>
+                        <li class="li-body-group"><span class="span-body-group">{{ group.course }}</span></li>
+                        <li class="li-body-group"><span class="span-body-group">{{ group.unit }}</span></li>
+                        <li class="li-body-group">
+                            <a onclick="location.href='{% url 'group_detail' group.id %}'"><img class="image-actions" src="../../static/images/foreign.png" alt="Visualizar"></a>
+                            <a onclick="location.href='{% url 'group_update' group.id %}'"><img class="image-actions" src="../../static/images/edit.png" alt="Editar"></a>
+                            <a onclick="location.href='{% url 'group_delete'  group.id %}'"><img class="image-actions" src="../../static/images/trash.png" alt="Excluir"></a>
+                        </li>
+                        <br> <br>
                     {% empty %}
                         <li>Ainda não há turmas cadastradas</li>
                     {% endfor %}
                 </ul>
             </div>
         </div>
-        <div id="bot-side"></div>
     </div>
-{% else %}
-  <p>Sua sessão expirou... </p>
-  <a href="{% url 'login' %}">Entrar</a>
-{% endif %}
+</div>
 </body>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </html>
