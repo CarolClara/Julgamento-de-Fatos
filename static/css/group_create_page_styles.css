@@ -128,7 +128,7 @@ body {
 #head-group-presentation {
     list-style-type: none;
     padding-top: 25px;
-    padding-left: 15px;
+    padding-left: 26px;
 }
 
 .li-head-group {
@@ -153,9 +153,11 @@ body {
 }
 
 .li-body-group {
-    display: inline;
+    display: inline-block;
     padding: 10px;
     margin-left: 15px;
-    margin-right: 29px;
-    font-size: 14px;
+    margin-right: 23px;
+    font-size: 10px;
+    width: 93px;
+    text-align: center;
 }
