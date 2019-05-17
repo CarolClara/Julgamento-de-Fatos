@@ -63,7 +63,7 @@
                 </div>
             </div>
             <div id="btn-create-group">
-                <a href='{% url 'judgement_facts_create' %}'><span class="btn btn-success">+ Cruar um JF</span></a>
+                <a href='{% url 'judgement_facts_create' %}'><span class="btn btn-success">+ Criar um JF</span></a>
             </div>
             <div id="right-center-content">
                 <ul id="head-group-presentation">
@@ -100,13 +100,3 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </html>
-
-
-<h1>Julgamentos de Fatos</h1>
-<ul>
-    {% for jf in object_list %}
-        <li>{{ jf.name }}</li>
-    {% empty %}
-        <li>Ainda não há Julgamentos de Fatos cadastradas</li>
-    {% endfor %}
-</ul>
