@@ -27,7 +27,7 @@ class Student(models.Model):
 
     id = models.AutoField(primary_key=True)
     user = models.OneToOneField(get_user_model(), on_delete=models.CASCADE)
-    program = models.ForeignKey('academic.Program', on_delete=models.PROTECT)
+    program = models.ForeignKey('academic.Program', verbose_name='Curso', on_delete=models.PROTECT)
 
     def __str__(self):
         return self.user.name
