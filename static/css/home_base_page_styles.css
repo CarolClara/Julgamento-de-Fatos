@@ -1,13 +1,9 @@
 * {
     font-weight: 700;
-    line-height: 26.4px;
-    font-family: Raleway;
     font-style: normal;
     font-variant: normal;
-    font-weight: 700;
-    line-height: 15.4px;
-    font-family: Raleway;
-    line-height: 18.5714px;
+    line-height: 15px;
+    font-family: Raleway, "Lucida Grande", sans-serif;
 }
 
 body {
@@ -33,7 +29,6 @@ body {
     padding-right: 0;
     background-color: #FFFAFA;
     height: 100vh;
-
 }
 
 #user-identification > img {

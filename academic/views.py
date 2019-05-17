@@ -18,7 +18,7 @@ class GroupListView(LoginRequiredMixin, ListView):
         return Group.objects.all().order_by('id')
 
 
-class GroupCreateView(CreateView):
+class GroupCreateView(LoginRequiredMixin, CreateView):
     def get(self, request, *args, **kwargs):
         context = {'form': GroupForm()}
         return render(request, 'group_create.html', context)
@@ -32,7 +32,7 @@ class GroupCreateView(CreateView):
         return render(request, 'group_create.html', {'form': form})
 
 
-class GroupUpdateView(UpdateView):
+class GroupUpdateView(LoginRequiredMixin, UpdateView):
     model = Group
     form_class = GroupForm
     template_name = 'group_update.html'
@@ -41,7 +41,7 @@ class GroupUpdateView(UpdateView):
         return Group.objects.get(id=self.kwargs['id'])
 
 
-class GroupDetailView(DetailView):
+class GroupDetailView(LoginRequiredMixin, DetailView):
     model = Group
     template_name = 'group_detail.html'
     context_object_name = 'group'
@@ -50,7 +50,7 @@ class GroupDetailView(DetailView):
         return Group.objects.get(id=self.kwargs['id'])
 
 
-class GroupDeleteView(DeleteView):
+class GroupDeleteView(LoginRequiredMixin, DeleteView):
     model = Group
     success_url = reverse_lazy('group_list')
     template_name = 'group_delete.html'
