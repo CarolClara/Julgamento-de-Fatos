@@ -61,7 +61,7 @@
                 <form method="post" class="input-signup">
                     {% csrf_token %}
                     {{ form.as_p }}
-                    <input type="reset" class="btn btn-danger" value="Cancelar">
+                    <a href='{% url 'group_list' %}'><span class="btn btn-danger">Cancelar</span></a>
                     <input type="submit" class="btn btn-success" value="Adicionar turma">
                 </form>
             </div>
