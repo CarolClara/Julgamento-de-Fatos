@@ -170,31 +170,3 @@ body {
     margin-top: 47px;
     float: right;
 }
-
-#right-center-content > form {
-    padding-top: 40px;
-}
-
-#right-center-content > form > p {
-    margin-top: 0;
-    margin-bottom: 1rem;
-    display: grid;
-    width: 500px;
-    margin-left: 180px;
-}
-
-
-#right-center-content > form > input.btn.btn-success {
-    margin-left: 150px;
-    margin-top: 20px;
-}
-
-#right-center-content > form > p > label {
-    color: #76BAC9;
-}
-
-#right-center-content > form > a > span {
-    margin-top: 20px;
-    margin-left: 230px;
-    margin-right: 20px;
-}

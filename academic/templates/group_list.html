@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway" type="text/css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Overpass" type="text/css" rel="stylesheet"/>
     <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" type="text/css" rel="stylesheet"/>
-    <link href="../../static/css/group_create_page_styles.css" rel="stylesheet" />
+    <link href="../../static/css/group_list_page_styles.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="{% static 'assets/js/home_base_scripts.js' %}"></script>
@@ -31,7 +31,7 @@
                     <a href="{% url 'group_list' %}" class="active">Turmas</a>
                 </li>
                 <li class="menu-home-li">
-                    <a href="#">Julgamento de Fatos</a>
+                    <a href="{% url 'judgment_facts_list' %}">Julgamento de Fatos</a>
                 </li>
                 <li class="menu-home-li">
                     <a href="#">Estatísticas</a>
@@ -62,6 +62,9 @@
                     <button type="submit"><i class="fa fa-search"></i></button>
                 </div>
             </div>
+            <div id="btn-create-group">
+                <a href='{% url 'group_create' %}'><span class="btn btn-success">+ Adicionar Turma</span></a>
+            </div>
             <div id="right-center-content">
                 <ul id="head-group-presentation">
                     <li class="li-head-group"><span class="span-head-group">Nome</span></li>
@@ -80,9 +83,9 @@
                         <li class="li-body-group"><span class="span-body-group">{{ group.course }}</span></li>
                         <li class="li-body-group"><span class="span-body-group">{{ group.unit }}</span></li>
                         <li class="li-body-group">
-                            <a onclick="location.href='{% url 'group_detail' group.id %}'"><img class="image-actions" src="../../static/images/foreign.png" alt="Visualizar"></a>
-                            <a onclick="location.href='{% url 'group_update' group.id %}'"><img class="image-actions" src="../../static/images/edit.png" alt="Editar"></a>
-                            <a onclick="location.href='{% url 'group_delete'  group.id %}'"><img class="image-actions" src="../../static/images/trash.png" alt="Excluir"></a>
+                            <a href='{% url 'group_detail' group.id %}'><img class="image-actions" src="../../static/images/foreign.png" alt="Visualizar"></a>
+                            <a href='{% url 'group_update' group.id %}'><img class="image-actions" src="../../static/images/edit.png" alt="Editar"></a>
+                            <a href='{% url 'group_delete'  group.id %}'><img class="image-actions" src="../../static/images/trash.png" alt="Excluir"></a>
                         </li>
                         <br> <br>
                     {% empty %}
