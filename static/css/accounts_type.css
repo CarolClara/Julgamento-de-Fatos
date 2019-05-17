@@ -6,19 +6,19 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    font-family: Raleway, "Lucida Grande", sans-serif;
 }
 
 
 #id-signup-type {
-    font-family: Raleway, "Lucida Grande", sans-serif;
-    font-weight: 700;
+    font-weight: 600;
     font-style: normal;
     font-variant: normal;
     line-height: 55px;
-    text-align: right;
+    text-align: center;
     font-size: 30px;
     color: #76BAC9;
-    margin: 16px;
+    margin-left: 10%;
 }
 
 #base {
@@ -41,10 +41,11 @@ body {
     background-color: #FFFAFA;
     color: #76BAC9;
     border: 2px solid #76BAC9;
-    border-radius: 15px;
-    width: 150px;
-    height: 40px;
-    font-size: 15px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    width: 165px;
+    height: 44px;
 }
 
 .form-custom {
@@ -73,11 +74,12 @@ body {
     color: #76BAC9;
     margin: 16px;
     position: absolute;
+    cursor: pointer;
 }
 
 
 #id-type-options {
     height: 75%;
     padding-top: 30px;
-    margin-left: 210px;
+    margin-left: 200px;
 }
