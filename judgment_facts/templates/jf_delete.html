@@ -1,4 +1,78 @@
-<form method="post">{% csrf_token %}
-    <p>Are you sure you want to delete "{{ object }}"?</p>
-    <input type="submit" value="Confirm">
-</form>
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Group-Page</title>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" type="text/css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Overpass" type="text/css" rel="stylesheet"/>
+    <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" type="text/css" rel="stylesheet"/>
+    <link href="../../static/css/jf_delete_page_styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="{% static 'assets/js/home_base_scripts.js' %}"></script>
+</head>
+<body>
+<div id="id-container" class="container">
+    <div class="row">
+        <div id="menu-vertical-left" class="col-sm-3">
+            {% if user.is_active %}
+            <div id="user-identification">
+                <img src="" alt="">
+                {{ user.username }}
+            </div>
+            <ul id="menu-home-ul" class="nav nav-pills">
+                <li class="menu-home-li">
+                    <a href="{% url 'group_list' %}" class="active">Turmas</a>
+                </li>
+                <li class="menu-home-li">
+                    <a href="{% url 'judgment_facts_list' %}">Julgamento de Fatos</a>
+                </li>
+                <li class="menu-home-li">
+                    <a href="#">Estatísticas</a>
+                </li>
+                <li class="menu-home-li">
+                    <a href="#">Configurações</a>
+                </li>
+                <li class="menu-home-li">
+                    <a href="#">Sobre</a>
+                </li>
+                <li class="menu-home-li">
+                    <a href="#">Ajuda</a>
+                </li>
+                <li class="menu-home-li">
+                    <a href="{% url 'login' %}">Sair</a>
+                </li>
+            </ul>
+        </div>
+        {% else %}
+          <p>Sua sessão expirou... </p>
+          <a href="{% url 'login' %}">Entrar</a>
+        {% endif %}
+        <div id="home-content" class="col-sm-9">
+            <div id="title">
+                <h1>JF > Excluir Julgamento de Fatos</h1>
+            </div>
+            <div id="right-center-content">
+                <ul id="head-group-presentation">
+                    <li class="li-head-group"><span class="span-head-group">Exclusão de JF</span></li>
+                </ul>
+                <div id="line"></div>
+                <form method="post">{% csrf_token %}
+                    <p>Você deseja realmente excluir o JF "{{ object }}"?</p>
+                    <a href='{% url 'group_list' %}'><span class="btn btn-success">Cancelar</span></a>
+                    <input type="submit" class="btn btn-danger" value="Excluir Turma">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</html>
+
