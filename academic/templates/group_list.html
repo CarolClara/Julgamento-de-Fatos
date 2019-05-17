@@ -80,9 +80,9 @@
                         <li class="li-body-group"><span class="span-body-group">{{ group.course }}</span></li>
                         <li class="li-body-group"><span class="span-body-group">{{ group.unit }}</span></li>
                         <li class="li-body-group">
-                            <a onclick="location.href='{% url 'group_detail' group.id %}'"><img class="image-actions" src="../../static/images/foreign.png" alt="Visualizar"></a>
-                            <a onclick="location.href='{% url 'group_update' group.id %}'"><img class="image-actions" src="../../static/images/edit.png" alt="Editar"></a>
-                            <a onclick="location.href='{% url 'group_delete'  group.id %}'"><img class="image-actions" src="../../static/images/trash.png" alt="Excluir"></a>
+                            <a href='{% url 'group_detail' group.id %}'><img class="image-actions" src="../../static/images/foreign.png" alt="Visualizar"></a>
+                            <a href='{% url 'group_update' group.id %}'><img class="image-actions" src="../../static/images/edit.png" alt="Editar"></a>
+                            <a href='{% url 'group_delete'  group.id %}'><img class="image-actions" src="../../static/images/trash.png" alt="Excluir"></a>
                         </li>
                         <br> <br>
                     {% empty %}
