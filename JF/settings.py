@@ -8,7 +8,7 @@ SECRET_KEY = 'n+q8bpiudy_x-#4cjjrw4yi5r_srcal@i%2_io(7@q2)1fq-4n'
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
+ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -20,6 +20,7 @@ INSTALLED_APPS = [
     'academic',
     'judgment_facts',
     'account',
+    "core"
 ]
 
 MIDDLEWARE = [
