@@ -6,11 +6,13 @@ from django.views.generic import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
 
+from core.views import JFBaseView
 from .forms import GroupForm
 from .models import Group
 
 
-class GroupListView(LoginRequiredMixin, ListView):
+class GroupListView(JFBaseView, ListView):
+    app_title = "Turmas"
     model = Group
     template_name = 'group_list.html'
 
