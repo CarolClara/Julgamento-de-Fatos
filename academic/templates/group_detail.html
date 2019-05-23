@@ -7,7 +7,7 @@
 
 {% block base_content %}
     <div id="top-center-content">
-        <ul id="head-group-presentation">
+        <ul id="head-group">
             <li class="li-head-group"><span class="span-head-group">Nome</span></li>
             <li class="li-head-group"><span class="span-head-group">ID</span></li>
             <li class="li-head-group"><span class="span-head-group">Disciplina</span></li>
@@ -15,7 +15,7 @@
             <li class="li-head-group"><span class="span-head-group">Unidade</span></li>
         </ul>
         <div id="line"></div>
-        <ul id="body-group-presentation">
+        <ul id="body-group">
             <li class="li-body-group"><span class="span-body-group">{{ group.name }}</span></li>
             <li class="li-body-group"><span class="span-body-group">{{ group.id }}</span></li>
             <li class="li-body-group"><span class="span-body-group">{{ group.program }}</span></li>
@@ -33,7 +33,7 @@
             <li class="li-sub-head-studant"><span class="span-head-studant">Matricula</span></li>
             <li class="li-sub-head-studant"><span class="span-head-studant">Email</span></li>
         </ul>
-        <ul id="body-studant-presentation">
+        <ul id="body-group">
             {% for studant in group.student.all %}
                 <li class="li-body-studant"><span class="span-body-studant">{{ studant.user.name }}</span></li>
                 <li class="li-body-studant"><span class="span-body-studant">{{ studant.id }}</span></li>

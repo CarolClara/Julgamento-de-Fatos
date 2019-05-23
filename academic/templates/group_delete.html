@@ -6,15 +6,19 @@
 {% endblock extra_css %}
 
 {% block base_content %}
-    <div id="right-center-content">
-        <ul id="head-group-presentation">
+    <div id="right-center-content" class="confirm-content">
+        <ul id="head-group">
             <li class="li-head-group"><span class="span-head-group">Exclusão de Turma</span></li>
         </ul>
         <div id="line"></div>
-        <form method="post">{% csrf_token %}
-            <p>Você deseja realmente excluir a turma "{{ object }}"?</p>
-            <a href='{% url 'group_list' %}'><span class="btn btn-success">Cancelar</span></a>
-            <input type="submit" class="btn btn-danger" value="Excluir Turma">
+        <form class="d-flex" method="post">{% csrf_token %}
+            <div class="message">
+                <p>Você deseja realmente excluir a turma "{{ object }}"?</p>
+            </div>
+            <div class="buttons">
+                <a href='{% url 'group_list' %}'><span class="btn btn-success">Cancelar</span></a>
+                <input type="submit" class="btn btn-danger" value="Excluir Turma">
+            </div>
         </form>
     </div>
 {% endblock base_content %}
