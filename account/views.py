@@ -44,25 +44,21 @@ def logout(request):
 def signup_teacher(request):
     if request.method == 'POST':
         form = TeacherForm(request.POST)
-
         if form.is_valid():
             form.save()
             return render(request, "home.html")
-    else:
-        form = TeacherForm()
-        return render(request, "registration/signup_teacher.html", {'form': form})
+    form = TeacherForm()
+    return render(request, "registration/signup_teacher.html", {'form': form})
 
 
 def signup_student(request):
     if request.method == 'POST':
         form = StudentForm(request.POST)
-
         if form.is_valid():
             form.save()
             return render(request, "home.html")
-    else:
-        form = StudentForm()
-        return render(request, "registration/signup_student.html", {'form': form})
+    form = StudentForm()
+    return render(request, "registration/signup_student.html", {'form': form})
 
 
 def signup_type(request):
