@@ -1,0 +1,13 @@
+{% load static %}
+<div id="user-identification" class="sidebar-heading">
+    <div class="col-xs-12">
+        {% if user.image %}
+        <img id="profile-image-menu" src="{{ user.image }}" alt="Imagem do Usuário">
+        {% else %}
+        <img id="profile-image-menu" src="{% static "images/default-profile-image.jpg" %}" alt="Imagem Padrão">
+        {% endif %}
+    </div>
+    <div class="col-xs-12">
+        <span>{{ user.username }}</span>
+    </div>
+</div>
