@@ -25,9 +25,13 @@
 <body>
 <div id="wrapper" class="d-flex">
     {% include "includes/_sidebar.html" %}
-    <div id="page-content-wrapped">
+    <div id="page-content-wrapper">
         {% include "includes/_top_bar.html" %}
-        <div class="container-fluid">
+        <div class="container-fluid d-flex">
+            <div id="btn-group-view">
+                {% block action_buttons %}
+                {% endblock action_buttons %}
+            </div>
             {% block base_content %}
             {% endblock base_content %}
         </div>
