@@ -10,7 +10,7 @@ from account.forms import TeacherForm, StudentForm
 
 @login_required
 def home(request):
-    return render(request, 'registration/home.html')
+    return render(request, 'home.html')
 
 
 def login(request):
@@ -47,7 +47,7 @@ def signup_teacher(request):
 
         if form.is_valid():
             form.save()
-            return render(request, "registration/home.html")
+            return render(request, "home.html")
     else:
         form = TeacherForm()
         return render(request, "registration/signup_teacher.html", {'form': form})
@@ -59,7 +59,7 @@ def signup_student(request):
 
         if form.is_valid():
             form.save()
-            return render(request, "registration/home.html")
+            return render(request, "home.html")
     else:
         form = StudentForm()
         return render(request, "registration/signup_student.html", {'form': form})
