@@ -5,12 +5,13 @@
 <link href="{% static "css/jf_list_page_styles.css" %}" rel="stylesheet" />
 {% endblock extra_css %}
 
+{% block action_buttons %}
+    <a href='{% url 'judgement_facts_create' %}'><span class="btn btn-success">+ Criar um JF</span></a>
+{% endblock action_buttons %}
+
 {% block base_content %}
-    <div id="btn-create-group">
-        <a href='{% url 'judgement_facts_create' %}'><span class="btn btn-success">+ Criar um JF</span></a>
-    </div>
     <div id="right-center-content">
-        <ul id="head-group-presentation">
+        <ul id="head-group">
             <li class="li-head-group"><span class="span-head-group">Nome</span></li>
             <li class="li-head-group"><span class="span-head-group">ID</span></li>
             <li class="li-head-group"><span class="span-head-group">Turma</span></li>
@@ -19,8 +20,8 @@
             <li class="li-head-group"><span class="span-head-group">Ações</span></li>
         </ul>
         <div id="line"></div>
-        <ul id="body-group-presentation">
-            {% for jf in object_list %}
+        {% for jf in object_list %}
+            <ul id="body-group">
                 <li class="li-body-group"><span class="span-body-group">{{ jf.name }}</span></li>
                 <li class="li-body-group"><span class="span-body-group">{{ jf.id }}</span></li>
                 <li class="li-body-group"><span class="span-body-group">{{ jf.group_set.name }}</span></li>
@@ -31,10 +32,12 @@
                     <a href='{% url 'judgment_facts_update_update' group.id %}'><img class="image-actions" src="../../static/images/edit.png" alt="Editar"></a>
                     <a href='{% url 'judgment_facts_delete_delete'  group.id %}'><img class="image-actions" src="../../static/images/trash.png" alt="Excluir"></a>
                 </li>
-                <br> <br>
-            {% empty %}
-                <li id="empty-jf">Ainda não há julgamento de fatos cadastradas</li>
-            {% endfor %}
-        </ul>
+            </ul>
+        {% empty %}
+            <ul id="body-group" class="text-center">
+                <li id="empty-groups">Ainda não há julgamento de fatos cadastradas</li>
+            </ul>
+        {% endfor %}
+
     </div>
 {% endblock base_content %}

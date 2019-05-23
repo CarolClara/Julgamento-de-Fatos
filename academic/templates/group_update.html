@@ -6,12 +6,15 @@
 {% endblock extra_css %}
 
 {% block base_content %}
-    <div id="right-center-content">
-        <form method="post" class="input-signup">
+    <div id="right-center-content" class="confirm-content">
+        <div id="line"></div>
+        <form class="d-flex" method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <a href='{% url 'group_list' %}'><span class="btn btn-danger">Cancelar</span></a>
-            <input type="submit" class="btn btn-success" value="Atualizar turma">
+            <div class="buttons">
+                <a href='{% url 'group_list' %}'><span class="btn btn-danger">Cancelar</span></a>
+                <input type="submit" class="btn btn-success" value="Atualizar turma">
+            </div>
         </form>
     </div>
 {% endblock base_content %}
