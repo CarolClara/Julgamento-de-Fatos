@@ -23,6 +23,14 @@ class FactForm(forms.ModelForm):
         model = Fact
         fields = ['order', 'statement', 'topic_group', 'correct_answer']
 
+    def save(self, commit=True, **kwargs):
+        jf = JudgmentFacts.objects.get(id=kwargs['jf_id'])
+        data = self.data
+        return Fact.objects.create(
+            order=data['order'], statement=data['statement'], topic_group=data['topic_group'],
+            correct_answer=data['correct_answer'], judgment_facts=jf
+        )
+
 
 class TeamForm(forms.ModelForm):
 

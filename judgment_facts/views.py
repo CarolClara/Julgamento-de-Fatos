@@ -32,7 +32,7 @@ class JudgmentFactsCreateView(JFBaseView, CreateView):
         if form.is_valid():
             jf = form.save()
             jf.save()
-            return HttpResponseRedirect(reverse_lazy('fact_create', args=[jf.id]))
+            return HttpResponseRedirect(reverse_lazy('fact_create', kwargs={'jf_id': jf.id}))
         return render(request, 'jf_create.html', {'form': form})
 
 
@@ -66,7 +66,11 @@ class FactListView(JFBaseView, ListView):
     template_name = 'fact_list.html'
 
     def get_queryset(self, **kwargs):
-        return Fact.objects.all().order_by('id')
+        return Fact.objects.filter(judgment_facts__id=kwargs['jf_id']).order_by('id')
+
+    def get_context_data(self, **kwargs):
+        context = super(FactListView, self).get_context_data()
+        context['id_jf'] = kwargs['id_jf']
 
 
 class FactCreateView(JFBaseView, CreateView):
@@ -78,7 +82,7 @@ class FactCreateView(JFBaseView, CreateView):
         return render(request, 'fact_create.html', context)
 
     def post(self, request, *args, **kwargs):
-        form = FactForm(request.POST)
+        form = FactForm(request.POST, kwargs)
         if form.is_valid():
             fact = form.save()
             fact.save()
